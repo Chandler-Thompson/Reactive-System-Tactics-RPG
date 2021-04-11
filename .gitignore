@@ -58,3 +58,15 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+# All we need are the Assets and ProjectSettings folders
+*.[o]
+*~
+*.pidb
+*.userprefs
+
+*.orig
+*.orig.meta
+
+Assets/Resources/Jobs/
+Jobs.meta
+
