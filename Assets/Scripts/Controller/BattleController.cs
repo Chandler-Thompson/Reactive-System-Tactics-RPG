@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class BattleController : StateMachine 
 {
+	public bool isTesting = false;
 	public CameraRig cameraRig;
 	public Board board;
 	public LevelData levelData;
@@ -22,6 +23,10 @@ public class BattleController : StateMachine
 
 	void Start ()
 	{
-		ChangeState<InitBattleState>();
+		if(isTesting){
+			ChangeState<InitBattleTestState>();
+		}else{
+			ChangeState<InitBattleState>();
+		}
 	}
 }

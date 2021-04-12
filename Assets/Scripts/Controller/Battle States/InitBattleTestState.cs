@@ -1,8 +1,8 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class InitBattleState : BattleState 
+public class InitBattleTestState : BattleState 
 {
 	public override void Enter ()
 	{
@@ -26,12 +26,8 @@ public class InitBattleState : BattleState
 	{
 		string[] recipes = new string[]
 		{
-			"Alaois",
-			"Hania",
-			"Kamau",
-			"Enemy Rogue",
-			"Enemy Warrior",
-			"Enemy Wizard"
+			"Good Elemental Mage",
+			"Bad Elemental Mage"
 		};
 
 		GameObject unitContainer = new GameObject("Units");
