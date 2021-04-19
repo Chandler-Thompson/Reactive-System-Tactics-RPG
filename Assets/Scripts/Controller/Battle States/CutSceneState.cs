@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class CutSceneState : BattleState 
 {
@@ -22,6 +23,8 @@ public class CutSceneState : BattleState
 				data = Resources.Load<ConversationData>("Conversations/OutroSceneWin");
 			else
 				data = Resources.Load<ConversationData>("Conversations/OutroSceneLose");
+
+			SceneManager.LoadScene("Main Menu"); //TODO: Use SceneController
 		}
 		else
 		{

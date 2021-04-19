@@ -21,7 +21,7 @@ public class InitBattleState : BattleState
 		yield return null;
 		owner.ChangeState<CutSceneState>();
 	}
-	
+
 	void SpawnTestUnits ()
 	{
 		string[] recipes = new string[]

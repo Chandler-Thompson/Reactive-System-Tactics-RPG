@@ -9,6 +9,8 @@ public abstract class BattleState : State
 	public CameraRig cameraRig { get { return owner.cameraRig; }}
 	public Board board { get { return owner.board; }}
 	public LevelData levelData { get { return owner.levelData; }}
+	public List<string> unitRecipes { get { return owner.unitRecipes; }}
+	public List<int> unitLevels { get { return owner.unitLevels; }}
 	public Transform tileSelectionIndicator { get { return owner.tileSelectionIndicator; }}
 	public Point pos { get { return owner.pos; } set { owner.pos = value; }}
 	public Tile currentTile { get { return owner.currentTile; }}

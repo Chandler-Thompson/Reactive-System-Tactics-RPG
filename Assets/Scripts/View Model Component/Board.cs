@@ -8,6 +8,8 @@ public class Board : MonoBehaviour
 	#region Fields / Properties
 	[SerializeField] GameObject tilePrefab;
 	public Dictionary<Point, Tile> tiles = new Dictionary<Point, Tile>();
+	public Dictionary<Point, Tile> playerSpawns = new Dictionary<Point, Tile>();
+	public Dictionary<Point, Tile> cpuSpawns = new Dictionary<Point, Tile>();
 	public Point min { get { return _min; }}
 	public Point max { get { return _max; }}
 	Point _min;
@@ -28,7 +30,8 @@ public class Board : MonoBehaviour
 	{
 		_min = new Point(int.MaxValue, int.MaxValue);
 		_max = new Point(int.MinValue, int.MinValue);
-		
+			
+		//Load all tiles of the board
 		for (int i = 0; i < data.tiles.Count; ++i)
 		{
 			GameObject instance = Instantiate(tilePrefab) as GameObject;
@@ -41,6 +44,22 @@ public class Board : MonoBehaviour
 			_min.y = Mathf.Min(_min.y, t.pos.y);
 			_max.x = Mathf.Max(_max.x, t.pos.x);
 			_max.y = Mathf.Max(_max.y, t.pos.y);
+		}
+
+		//Load all player spawns of the board
+		for (int i = 0; i < data.playerSpawns.Count; ++i)
+		{
+			Vector3 spawn = data.playerSpawns[i];
+			Point spawnPoint = new Point((int)spawn.x, (int)spawn.y);
+			playerSpawns.Add(spawnPoint, tiles[spawnPoint]);
+		}
+
+		//Load all cpu spawns of the board
+		for (int i = 0; i < data.cpuSpawns.Count; ++i)
+		{
+			Vector3 spawn = data.cpuSpawns[i];
+			Point spawnPoint = new Point((int)spawn.x, (int)spawn.y);
+			cpuSpawns.Add(spawnPoint, tiles[spawnPoint]);
 		}
 	}
 
