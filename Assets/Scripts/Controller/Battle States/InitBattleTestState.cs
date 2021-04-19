@@ -19,7 +19,7 @@ public class InitBattleTestState : BattleState
 		AddVictoryCondition();
 		owner.round = owner.gameObject.AddComponent<TurnOrderController>().Round();
 		yield return null;
-		owner.ChangeState<CutSceneState>();
+		owner.ChangeState<SelectUnitState>();
 	}
 	
 	void SpawnUnits()
