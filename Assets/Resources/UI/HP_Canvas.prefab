@@ -329,6 +329,7 @@ GameObject:
   - component: {fileID: 5385822600434610094}
   - component: {fileID: 5385822600434610095}
   - component: {fileID: 2265933980876997552}
+  - component: {fileID: 2335612975173156802}
   m_Layer: 5
   m_Name: HP_Canvas
   m_TagString: Untagged
@@ -429,8 +430,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2e9a9c557848604e8a0ff6788aefdd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP_Canvas: {fileID: 0}
   slider: {fileID: 7058103368800767768}
+--- !u!114 &2335612975173156802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5385822600434610064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95964dc5ad430d049a7f70fa2942625f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
 --- !u!1 &6080541179410374419
 GameObject:
   m_ObjectHideFlags: 0
