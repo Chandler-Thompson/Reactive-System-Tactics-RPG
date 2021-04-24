@@ -70,7 +70,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statusName: SheepPerviousStatusEffect
-  duration: 20
+  isStackable: 1
+  initialStacks: 1
+  isLimitedDuration: 0
+  duration: 0
 --- !u!1 &2737479124214152463
 GameObject:
   m_ObjectHideFlags: 0

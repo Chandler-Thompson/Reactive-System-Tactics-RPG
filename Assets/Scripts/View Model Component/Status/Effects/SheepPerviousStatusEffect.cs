@@ -19,19 +19,16 @@ public class SheepPerviousStatusEffect : StatusEffect
     	}
 
     	//Show the status effect visually
-    	if(mainMaterial != null){
-			originalColor = mainMaterial.GetColor("_BaseColor");
-			mainMaterial.SetColor("_BaseColor", Color.yellow);
-		}
 
     }
 
     void OnDisable ()
 	{
+		
 		Debug.Log("[SheepPerviousStatusEffect] Disabled!");
 		this.RemoveObserver(OnHPWillChange, Stats.WillChangeNotification(StatTypes.HP), stats);
-		if(mainMaterial != null)
-			mainMaterial.SetColor("_BaseColor", originalColor);
+
+		//Remove status effect visual
 	}
 
 	void OnHPWillChange (object sender, object args)
