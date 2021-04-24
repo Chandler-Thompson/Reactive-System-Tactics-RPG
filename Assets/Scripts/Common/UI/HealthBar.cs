@@ -39,14 +39,11 @@ public class HealthBar : MonoBehaviour
 
     void OnHPDidChange(object sender, object args)
     {
-        Debug.Log("Got Hurt");
-        Debug.Log(stats[StatTypes.HP]);
         SetHealth(stats[StatTypes.HP]);
     }
 
     void OnMHPDidChange(object sender, object args)
     {
-        Debug.Log(stats);
         SetMaxHealth(stats[StatTypes.MHP]);
     }
 
