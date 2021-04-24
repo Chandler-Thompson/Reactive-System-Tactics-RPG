@@ -33,7 +33,6 @@ public static class UnitFactory
 		AddAbilityCatalog(obj, recipe.abilityCatalog);
 		AddAlliance(obj, recipe.alliance);
 		AddAttackPattern(obj, recipe.strategy);
-		obj.AddComponent<HPBar_Actor>();
 		return obj;
 	}
 	#endregion
@@ -131,12 +130,9 @@ public static class UnitFactory
 	static void AddAttackPattern (GameObject obj, string name)
 	{
 		Driver driver = obj.AddComponent<Driver>();
-		if (string.IsNullOrEmpty(name))
-		{
+		if (string.IsNullOrEmpty(name)){
 			driver.normal = Drivers.Human;
-		}
-		else
-		{
+		}else{
 			driver.normal = Drivers.Computer;
 			GameObject instance = InstantiatePrefab("Attack Pattern/" + name);
 			instance.transform.SetParent(obj.transform);

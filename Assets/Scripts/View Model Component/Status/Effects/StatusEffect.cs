@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 
 public abstract class StatusEffect : MonoBehaviour 
@@ -24,8 +25,18 @@ public abstract class StatusEffect : MonoBehaviour
 
 		holder = GetComponentInParent<Tile>();
 
-		mainMaterial = myParent.GetComponentInChildren<MeshRenderer>().material;
+		try{
+			mainMaterial = myParent.GetComponentInChildren<MeshRenderer>().material;
+		}catch(NullReferenceException e){
+			mainMaterial = null;
+		}
 
+	}
+
+	protected void Update(){
+		if(myCondition == null){
+			myCondition = this.GetComponentInChildren<StatusCondition>();
+		}
 	}
 
 }

@@ -47,13 +47,19 @@ public class ConfirmAbilityTargetState : BattleState
 	{
 		if (e.info == 0)
 		{
+			Debug.Log("[ConfirmAbilityState] Left-Clicked.");
 			if (turn.targets.Count > 0)
 			{
+				Debug.Log("[ConfirmAbilityState] There are targets.");
 				owner.ChangeState<PerformAbilityState>();
+			}else{
+				Debug.Log("[ConfirmAbilityState] There are no valid targets.");
 			}
 		}
-		else
+		else{
+			Debug.Log("[ConfirmAbilityState] Right-Clicked.");
 			owner.ChangeState<AbilityTargetState>();
+		}
 	}
 
 	void FindTargets ()
