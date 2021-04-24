@@ -21,6 +21,6 @@ public class DashAbilityEffect : BaseAbilityEffect
 		// 	if ( CurableTypes.Contains( effect.GetType() ))
 		// 		candidates[i].Remove();
 		// }
-		// return 0;
+		return 0;
 	}
 }
