@@ -55,7 +55,7 @@ public class InputController : MonoBehaviour
 		if (x != 0 || y != 0)
 		{
 			if (moveEvent != null)
-				moveEvent(this, new InfoEventArgs<Point>(new Point(y, -x)));
+				moveEvent(this, new InfoEventArgs<Point>(new Point(x, y)));
 		}
 
 		for (int i = 0; i < 3; ++i)
