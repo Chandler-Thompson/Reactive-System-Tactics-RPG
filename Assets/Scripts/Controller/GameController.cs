@@ -15,10 +15,10 @@ public class GameController : MonoBehaviour
  		// "Save" battle data before being loaded by the Battle Controller
 		PlayerPrefsController.StoreString(SavedData.CurrLevelName, "Level_3");
 
-		List<string> unitRecipes = new List<string> {"Sleep Shepherd", "Sleep Sheep", "Sleep Demon"};
+		List<string> unitRecipes = new List<string> {"Sleep Shepherd", "Sleep Sheep", "Sleep Demon", "Sleep Demon"};
 		PlayerPrefsController.StoreStringList(SavedData.CurrLevelUnitRecipes, unitRecipes);
 
-		List<int> unitLevels = new List<int> {1,1,1};
+		List<int> unitLevels = new List<int> {1,1,1,1};
 		PlayerPrefsController.StoreIntList(SavedData.CurrLevelUnitLevels, unitLevels);
 
 	}

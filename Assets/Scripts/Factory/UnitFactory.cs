@@ -35,6 +35,18 @@ public static class UnitFactory
 		AddAttackPattern(obj, recipe.strategy);
 		return obj;
 	}
+
+	public static GameObject Change (Unit unit, string changeTo)
+	{
+		int level = unit.transform.parent.GetComponentInChildren<Stats>()[StatTypes.LVL];
+		return Create(changeTo, level);
+	}
+
+	public static GameObject Change (Unit unit, UnitRecipe changeTo)
+	{
+		int level = unit.transform.parent.GetComponentInChildren<Stats>()[StatTypes.LVL];
+		return Create(changeTo, level);
+	}
 	#endregion
 
 	#region Private

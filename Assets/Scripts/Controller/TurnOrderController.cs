@@ -38,6 +38,10 @@ public class TurnOrderController : MonoBehaviour
 
 			for (int i = units.Count - 1; i >= 0; --i)
 			{
+				
+				if(units[i] == null)
+					continue;
+
 				if (CanTakeTurn(units[i]))
 				{
 					bc.turn.Change(units[i]);

@@ -41,7 +41,7 @@ public class SheepPerviousStatusEffect : StatusEffect
 
 		ValueChangeException vce = args as ValueChangeException;
 		Debug.Log("[SheepPerviousStatusEffect] Multiplying damage by "+totalDamageMultiplier+"! ("+damageMultiplier+"x multiplier * "+numStacks+" stacks)");
-		vce.AddModifier(new MultDeltaModifier(int.MaxValue, totalDamageMultiplier));
+		vce.AddModifier(new MultDeltaModifier(2, totalDamageMultiplier));
 		myCondition.Remove();//can only be procced once
 	}
 

@@ -16,11 +16,13 @@ public class AutoStatusController : MonoBehaviour
 	void OnHPDidChangeNotification (object sender, object args)
 	{
 		Stats stats = sender as Stats;
-		if (stats[StatTypes.HP] == 0)
+		if (stats[StatTypes.HP] <= 0)
 		{
 			Status status = stats.GetComponentInChildren<Status>();
-			StatComparisonCondition c = status.Add<KnockOutStatusEffect, StatComparisonCondition>();
+			StatComparisonCondition c = status.Add<SleepScapeStatusEffect, StatComparisonCondition>();
 			c.Init(StatTypes.HP, 0, c.EqualTo);
+			// StatComparisonCondition c = status.Add<KnockOutStatusEffect, StatComparisonCondition>();
+			// c.Init(StatTypes.HP, 0, c.EqualTo);
 		}
 	}
 }
