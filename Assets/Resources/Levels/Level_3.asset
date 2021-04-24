@@ -3,8 +3,9 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -69,4 +70,9 @@ MonoBehaviour:
   - {x: 1, y: 2, z: 5}
   - {x: 2, y: 2, z: 5}
   - {x: 1, y: 2, z: 6}
+  - {x: 1, y: 2, z: 7}
+  playerSpawns:
+  - {x: 2, y: 4, z: 6}
+  - {x: 5, y: 4, z: 6}
+  cpuSpawns:
   - {x: 1, y: 2, z: 7}

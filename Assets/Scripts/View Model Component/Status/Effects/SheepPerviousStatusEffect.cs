@@ -20,8 +20,8 @@ public class SheepPerviousStatusEffect : StatusEffect
 
     	//Show the status effect visually
     	if(mainMaterial != null){
-			originalColor = mainMaterial.GetColor("_Color");
-			mainMaterial.SetColor("_Color", Color.yellow);
+			originalColor = mainMaterial.GetColor("_BaseColor");
+			mainMaterial.SetColor("_BaseColor", Color.yellow);
 		}
 
     }
@@ -31,7 +31,7 @@ public class SheepPerviousStatusEffect : StatusEffect
 		Debug.Log("[SheepPerviousStatusEffect] Disabled!");
 		this.RemoveObserver(OnHPWillChange, Stats.WillChangeNotification(StatTypes.HP), stats);
 		if(mainMaterial != null)
-			mainMaterial.SetColor("_Color", originalColor);
+			mainMaterial.SetColor("_BaseColor", originalColor);
 	}
 
 	void OnHPWillChange (object sender, object args)
@@ -40,6 +40,10 @@ public class SheepPerviousStatusEffect : StatusEffect
 		vce.AddModifier(new MultDeltaModifier(int.MaxValue, damageMultiplier));
 		Debug.Log("[SheepPerviousStatusEffect] Multiplying damage by "+damageMultiplier+"!");
 		myCondition.Remove();//can only be procced once
+	}
+
+	void Update(){
+		base.Update();
 	}
 
 }
