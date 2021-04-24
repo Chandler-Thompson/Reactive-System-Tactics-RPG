@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model: Demon
   job: Rogue
-  attack: Ludum Dare/Sleepy
+  attack: Common/Attack
   abilityCatalog: Sleep Demon
-  strategy: 
+  strategy: Basic Attack Pattern
   locomotion: 2
   alliance: 4
   inventory: []

@@ -107,14 +107,18 @@ public class Board : MonoBehaviour
 
 	public void SelectTiles (List<Tile> tiles)
 	{
-		for (int i = tiles.Count - 1; i >= 0; --i)
-			tiles[i].GetComponent<Renderer>().material.SetColor("_BaseColor", selectedTileColor);
+		for (int i = tiles.Count - 1; i >= 0; --i){
+			tiles[i].transform.Find("Quad").GetComponent<Renderer>().material.SetColor("_BaseColor", selectedTileColor);
+			// tiles[i].GetComponentInChildren<Renderer>().material.SetColor("_BaseColor", selectedTileColor);
+		}
 	}
 
 	public void DeSelectTiles (List<Tile> tiles)
 	{
-		for (int i = tiles.Count - 1; i >= 0; --i)
-			tiles[i].GetComponent<Renderer>().material.SetColor("_BaseColor", defaultTileColor);
+		for (int i = tiles.Count - 1; i >= 0; --i){
+			tiles[i].transform.Find("Quad").GetComponent<Renderer>().material.SetColor("_BaseColor", defaultTileColor);
+			// tiles[i].GetComponentInChildren<Renderer>().material.SetColor("_BaseColor", defaultTileColor);
+		}
 	}
 	#endregion
 
