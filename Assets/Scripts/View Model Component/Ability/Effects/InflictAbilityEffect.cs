@@ -8,6 +8,8 @@ public class InflictAbilityEffect : BaseAbilityEffect
 	public string statusName;
 	public bool isStackable;
 	public int initialStacks;
+	public bool hasMaxStacks;
+	public int maxStacks;
 	public bool isLimitedDuration;
 	//[DrawIf("isLimitedDuration", true, ComparisonType.Equals)]
 	public int duration;
@@ -51,6 +53,10 @@ public class InflictAbilityEffect : BaseAbilityEffect
 
 			StackingStatusCondition condition = stackingRetValue as StackingStatusCondition;
 			condition.numStacks = initialStacks;
+			if(hasMaxStacks)
+				condition.maxStacks = maxStacks;
+			else
+				condition.maxStacks = int.MaxValue;
 		}
 		
 		return 0;

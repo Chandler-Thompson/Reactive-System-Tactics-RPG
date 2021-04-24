@@ -48,6 +48,7 @@ MonoBehaviour:
   statusName: SheepPerviousStatusEffect
   isStackable: 1
   initialStacks: 1
+  maxStacks: 999
   isLimitedDuration: 0
   duration: 0
 --- !u!114 &1364634643231714992
@@ -211,6 +212,7 @@ MonoBehaviour:
   statusName: SlowMovementStatusEffect
   isStackable: 0
   initialStacks: 0
+  maxStacks: 0
   isLimitedDuration: 1
   duration: 15
 --- !u!114 &1143654611262030971

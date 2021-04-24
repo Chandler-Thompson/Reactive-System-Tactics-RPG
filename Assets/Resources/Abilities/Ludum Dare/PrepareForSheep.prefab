@@ -71,7 +71,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statusName: SheepPerviousStatusEffect
   isStackable: 1
-  initialStacks: 5
+  initialStacks: 4
+  maxStacks: 999
   isLimitedDuration: 0
   duration: 0
 --- !u!1 &2737479124214152463

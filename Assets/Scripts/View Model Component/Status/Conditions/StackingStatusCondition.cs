@@ -6,6 +6,7 @@ public class StackingStatusCondition : StatusCondition
 {
 	public StackConditionTypes stackType;
     public int numStacks = 1;
+    public int maxStacks;
 
     private bool isOriginal = true;
 
@@ -46,10 +47,17 @@ public class StackingStatusCondition : StatusCondition
 			StackingStatusCondition[] otherStacks = parentStatus.GetComponentsInChildren<StackingStatusCondition>();
 			foreach(StackingStatusCondition otherStack in otherStacks){
 				if(otherStack.stackType == this.stackType && !otherStack.Equals(this)){
-					this.numStacks += otherStack.numStacks;
+
+					int totalStacks = this.numStacks + otherStack.numStacks;
+					if(totalStacks > this.maxStacks)
+						this.numStacks = this.maxStacks;
+					else
+						this.numStacks = totalStacks;
 					Debug.Log("[StackingStatusCondition] Took stacks from other "+this.stackType+" StackingStatusCondition.");
+					
 					otherStack.Remove();
 					Debug.Log("[StackingStatusCondition] Removed other "+this.stackType+" StackingStatusCondition.");
+
 				}
 			}
 

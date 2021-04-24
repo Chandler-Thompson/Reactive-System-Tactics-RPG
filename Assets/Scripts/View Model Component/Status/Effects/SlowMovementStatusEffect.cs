@@ -5,6 +5,7 @@ using UnityEngine;
 public class SlowMovementStatusEffect : StatusEffect
 {
 	bool statsChanged = false;
+    int amountSlowed = 0;
 
     void OnEnable()
     { 
@@ -14,7 +15,8 @@ public class SlowMovementStatusEffect : StatusEffect
     	//Reduce unit's movement (They're water logged!)
     	if(stats)
     	{
-    		stats.SetValue(StatTypes.MOV, stats[StatTypes.MOV]-2, false);
+            amountSlowed = stats[StatTypes.MOV]/2;
+    		stats.SetValue(StatTypes.MOV, stats[StatTypes.MOV]/2, false);
     		statsChanged = true;
     	}
 
@@ -27,6 +29,6 @@ public class SlowMovementStatusEffect : StatusEffect
 		Debug.Log("[SlowMovementStatusEffect] Disabled!");
 		//reset unit's previous state
 		if(statsChanged)
-			stats.SetValue(StatTypes.MOV, stats[StatTypes.MOV]+2, false);
+			stats.SetValue(StatTypes.MOV, stats[StatTypes.MOV]+amountSlowed, false);
 	}
 }
