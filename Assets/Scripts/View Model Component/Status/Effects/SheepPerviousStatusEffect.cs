@@ -33,9 +33,15 @@ public class SheepPerviousStatusEffect : StatusEffect
 
 	void OnHPWillChange (object sender, object args)
 	{
+
+		StackingStatusCondition stackingCondition = myCondition as StackingStatusCondition;
+		int numStacks = stackingCondition.numStacks;
+
+		int totalDamageMultiplier = numStacks * damageMultiplier;
+
 		ValueChangeException vce = args as ValueChangeException;
-		vce.AddModifier(new MultDeltaModifier(int.MaxValue, damageMultiplier));
-		Debug.Log("[SheepPerviousStatusEffect] Multiplying damage by "+damageMultiplier+"!");
+		Debug.Log("[SheepPerviousStatusEffect] Multiplying damage by "+totalDamageMultiplier+"! ("+damageMultiplier+"x multiplier * "+numStacks+" stacks)");
+		vce.AddModifier(new MultDeltaModifier(int.MaxValue, totalDamageMultiplier));
 		myCondition.Remove();//can only be procced once
 	}
 
