@@ -15,6 +15,8 @@ public class DurationStatusCondition : StatusCondition
 
 	void OnEnable ()
 	{
+		base.Update();
+		
 		this.AddObserver(OnNewTurn, TurnOrderController.RoundBeganNotification);
 	}
 
@@ -28,5 +30,10 @@ public class DurationStatusCondition : StatusCondition
 		setDuration(_duration-1);
 		if (_duration <= 0)
 			Remove();
+	}
+
+	void Update()
+	{
+		base.Update();
 	}
 }

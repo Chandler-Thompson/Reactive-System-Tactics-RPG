@@ -103,6 +103,9 @@ public class HealthBar : MonoBehaviour
 
         StatusEffect newEffect = args as StatusEffect;
 
+        Debug.Log("[HealthBar] StatusEffect: "+newEffect);
+        Debug.Log("[HealthBar] StatusEffect Name: "+newEffect.name);
+
         foreach(StatusCounter counter in statusCounters)
         {
             if (counter.statusEffectName.Equals(newEffect.name))

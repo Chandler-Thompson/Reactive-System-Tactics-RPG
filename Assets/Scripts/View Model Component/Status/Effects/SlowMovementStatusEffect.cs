@@ -12,7 +12,7 @@ public class SlowMovementStatusEffect : StatusEffect
     	base.initialize("SlowMovementStatusEffect");
     	Debug.Log("[SlowMovementStatusEffect] Enabled!");
 
-    	//Reduce unit's movement (They're water logged!)
+    	//Reduce unit's movement
     	if(stats)
     	{
             amountSlowed = stats[StatTypes.MOV]/2;

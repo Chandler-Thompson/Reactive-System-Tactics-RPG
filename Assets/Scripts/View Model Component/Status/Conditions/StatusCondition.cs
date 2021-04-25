@@ -16,6 +16,7 @@ public class StatusCondition : MonoBehaviour
 	protected void UpdateText(string text){
 		_text = text;
 		Unit owner = this.GetComponentInParent<Unit>();
+		Debug.Log("[StatusCondition] ParentEffect: "+parentEffect);
 		owner.PostNotification(UpdatedNotification, parentEffect);
 	}
 
