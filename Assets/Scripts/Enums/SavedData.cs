@@ -6,8 +6,9 @@ public class SavedData
 
     public string Value { get; set; }
 
-    public static SavedData CurrLevelName   { get { return new SavedData("CurrLevelName"); } }
-    public static SavedData CurrLevelUnitRecipes   { get { return new SavedData("CurrLevelUnitRecipes"); } }
-    public static SavedData CurrLevelUnitLevels    { get { return new SavedData("CurrLevelUnitLevels"); } }
+    public static SavedData CurrLevelNum	{ get { return new SavedData("CurrLevelNum"); }}
+    public static SavedData CurrLevelName   { get { return new SavedData("CurrLevelName"); }}
+    public static SavedData CurrLevelUnitRecipes   { get { return new SavedData("CurrLevelUnitRecipes"); }}
+    public static SavedData CurrLevelUnitLevels    { get { return new SavedData("CurrLevelUnitLevels"); }}
 
 }

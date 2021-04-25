@@ -8,7 +8,13 @@ public class SceneController : MonoBehaviour
 
 	//GameObject transition;
 
-    public void LoadScene(string sceneName){
+	public string GetCurrentScene()
+	{
+		return SceneManager.GetActiveScene().name;
+	}
+
+    public void LoadScene(string sceneName)
+    {
     	SceneManager.LoadScene(sceneName);
     }
 }
