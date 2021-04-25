@@ -10,7 +10,7 @@ public class DurationStatusCondition : StatusCondition
 	void setDuration(int duration)
 	{
 		_duration = duration;
-		_text = _duration.ToString();
+		base.UpdateText(_duration.ToString());
 	}
 
 	void OnEnable ()

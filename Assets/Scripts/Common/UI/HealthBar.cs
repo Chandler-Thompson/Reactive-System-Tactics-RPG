@@ -6,16 +6,22 @@ using UnityEngine.UI;
 public class HealthBar : MonoBehaviour
 {
     public Slider slider;
-    public Text sleepP_text;
 
-    public Dictionary<string, Text> statusCounters;
+    [System.Serializable]
+    public class StatusCounter
+    {
+        public string statusEffectName;
+        public Text statusEffectCounterTextField;
+    }
+
+    public List<StatusCounter> statusCounters;
 
     private Animator anim;
     private int currentHP; //used to test whether or not they got hurt or healed
     private int oldHP;
 
     Stats stats;
-    Status status;
+    Unit owner;
 
     void Update()
     {
@@ -32,12 +38,10 @@ public class HealthBar : MonoBehaviour
             oldHP = stats[StatTypes.HP];
         }
 
-        if (status == null)
+        if (owner == null)
         {
-            status = GetComponentInParent<Status>();
-
-            this.AddObserver(UpdateStatusCounter, Status.AddedNotification, status);
-            this.AddObserver(UpdateStatusCounter, Status.RemovedNotification, status);
+            owner = GetComponentInParent<Unit>();
+            this.AddObserver(UpdateStatusCounter, StatusCondition.UpdatedNotification, owner);
         }
 
     }
@@ -53,8 +57,7 @@ public class HealthBar : MonoBehaviour
     {
         this.RemoveObserver(OnHPDidChange, Stats.DidChangeNotification(StatTypes.HP), stats);
         this.RemoveObserver(OnMHPDidChange, Stats.DidChangeNotification(StatTypes.MHP), stats);
-        this.RemoveObserver(UpdateStatusCounter, Status.AddedNotification, status);
-        this.RemoveObserver(UpdateStatusCounter, Status.RemovedNotification, status);
+        this.RemoveObserver(UpdateStatusCounter, StatusCondition.UpdatedNotification, owner);
     }
 
     void OnHPDidChange(object sender, object args)
@@ -93,12 +96,26 @@ public class HealthBar : MonoBehaviour
 
     void UpdateStatusCounter (object sender, object args)
     {
+
+        Text counterTextField = null;
+
         StatusEffect newEffect = args as StatusEffect;
-        Text counter = statusCounters[newEffect.name];
+
+        foreach(StatusCounter counter in statusCounters)
+        {
+            if (counter.statusEffectName.Equals(newEffect.name))
+            {
+                counterTextField = counter.statusEffectCounterTextField;
+            }
+        }
 
         StatusCondition newEffectCondition = newEffect.GetComponentInChildren<StatusCondition>();
 
-        counter.text = newEffectCondition.text;
+        if(counterTextField && newEffectCondition)
+        {
+            counterTextField.text = newEffectCondition.text;
+        }
+        
     }
 
     public void SetMaxHealth(int health)

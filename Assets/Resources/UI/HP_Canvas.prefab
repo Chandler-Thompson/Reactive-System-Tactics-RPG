@@ -402,11 +402,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5385822600434610092}
+  - component: {fileID: 2265933980876997552}
+  - component: {fileID: 2335612975173156802}
   - component: {fileID: 5385822600434610093}
   - component: {fileID: 5385822600434610094}
   - component: {fileID: 5385822600434610095}
-  - component: {fileID: 2265933980876997552}
-  - component: {fileID: 2335612975173156802}
   m_Layer: 5
   m_Name: HP_Canvas
   m_TagString: Untagged
@@ -434,6 +434,36 @@ RectTransform:
   m_AnchoredPosition: {x: 438.5, y: 206}
   m_SizeDelta: {x: 877, y: 412}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2265933980876997552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5385822600434610064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2e9a9c557848604e8a0ff6788aefdd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 7058103368800767768}
+  sleepP_text: {fileID: 0}
+  statusCounters:
+  - statusEffectName: SleepParalysisStatusEffect
+    statusEffectCounterTextField: {fileID: 488101315005002419}
+--- !u!114 &2335612975173156802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5385822600434610064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95964dc5ad430d049a7f70fa2942625f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
 --- !u!223 &5385822600434610093
 Canvas:
   m_ObjectHideFlags: 0
@@ -477,7 +507,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &5385822600434610095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -495,32 +525,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &2265933980876997552
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5385822600434610064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2e9a9c557848604e8a0ff6788aefdd7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 7058103368800767768}
---- !u!114 &2335612975173156802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5385822600434610064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95964dc5ad430d049a7f70fa2942625f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 0}
 --- !u!1 &6080541179410374419
 GameObject:
   m_ObjectHideFlags: 0

@@ -187,6 +187,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2637674704279283910}
     m_Modifications:
+    - target: {fileID: 2265933980876997552, guid: b47db27b585aa934fae94cb90d5a6dfd,
+        type: 3}
+      propertyPath: slider
+      value: 
+      objectReference: {fileID: 6652887555359665855}
+    - target: {fileID: 2265933980876997552, guid: b47db27b585aa934fae94cb90d5a6dfd,
+        type: 3}
+      propertyPath: statusCounters.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2265933980876997552, guid: b47db27b585aa934fae94cb90d5a6dfd,
+        type: 3}
+      propertyPath: statusCounters.Array.data[0].statusEffectName
+      value: SleepParalysisStatusEffect
+      objectReference: {fileID: 0}
     - target: {fileID: 2697827332975857003, guid: b47db27b585aa934fae94cb90d5a6dfd,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -360,3 +375,15 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 4440732189580059047}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6652887555359665855 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7058103368800767768, guid: b47db27b585aa934fae94cb90d5a6dfd,
+    type: 3}
+  m_PrefabInstance: {fileID: 4440732189580059047}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

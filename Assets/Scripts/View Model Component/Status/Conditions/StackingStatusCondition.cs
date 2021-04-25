@@ -8,6 +8,7 @@ public class StackingStatusCondition : StatusCondition
     public int numStacks { get { return _numStacks; } set { setStacks(value); }}
     public int maxStacks = int.MaxValue;
 
+    [SerializeField]
     int _numStacks = 1;
 
 	bool isOriginal = true;
@@ -15,13 +16,13 @@ public class StackingStatusCondition : StatusCondition
     void setStacks(int numStacks)
     {
     	_numStacks = numStacks;
-    	_text = _numStacks.ToString();
+    	base.UpdateText(_numStacks.ToString());
     }
 
 	void OnEnable ()
 	{
 		base.Update();//to get parentStatus
-		
+
 		//take on title of original if there are no other stacks of this type
 		StackingStatusCondition[] otherStacks = parentStatus.GetComponentsInChildren<StackingStatusCondition>();
 		foreach(StackingStatusCondition otherStack in otherStacks){
