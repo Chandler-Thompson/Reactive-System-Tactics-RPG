@@ -71,8 +71,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statusName: SheepPerviousStatusEffect
   isStackable: 1
-  initialStacks: 4
-  maxStacks: 999
+  initialStacks: 2
+  hasMaxStacks: 0
+  maxStacks: 0
   isLimitedDuration: 0
   duration: 0
 --- !u!1 &2737479124214152463
@@ -89,7 +90,7 @@ GameObject:
   - component: {fileID: 7937417290673340155}
   - component: {fileID: 7997573857143442694}
   m_Layer: 0
-  m_Name: PrepareForSheep
+  m_Name: Prepare For Sheep
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

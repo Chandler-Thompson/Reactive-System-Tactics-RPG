@@ -4,6 +4,10 @@ using System.Collections.Generic;
 
 public class InitBattleTestState : BattleState 
 {
+
+	List<Tile> playerLocations;
+	List<Tile> cpuLocations;
+
 	public override void Enter ()
 	{
 		base.Enter ();
@@ -13,10 +17,15 @@ public class InitBattleTestState : BattleState
 	IEnumerator Init ()
 	{
 		board.Load( levelData );
+
+		playerLocations = new List<Tile>(board.playerSpawns.Values);
+		cpuLocations = new List<Tile>(board.cpuSpawns.Values);
+
 		Point p = new Point((int)levelData.tiles[0].x, (int)levelData.tiles[0].z);
 		SelectTile(p);
 		SpawnUnits();
 		AddVictoryCondition();
+
 		owner.round = owner.gameObject.AddComponent<TurnOrderController>().Round();
 		Debug.Log("[InitBattleTestState] Finished initializing steps...yielding...");
 		yield return null;
@@ -54,10 +63,6 @@ public class InitBattleTestState : BattleState
 
 	private Tile SpawnUnit(Alliances alliance)
 	{
-
-		List<Tile> playerLocations = new List<Tile>(board.playerSpawns.Values);
-		List<Tile> cpuLocations = new List<Tile>(board.cpuSpawns.Values);
-
 		Tile spawnTile = null;
 
 		if(alliance == Alliances.Hero){

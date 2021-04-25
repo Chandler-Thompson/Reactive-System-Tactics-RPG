@@ -6,7 +6,7 @@ public class StackingStatusCondition : StatusCondition
 {
 	public StackConditionTypes stackType;
     public int numStacks = 1;
-    public int maxStacks;
+    public int maxStacks = int.MaxValue;
 
     private bool isOriginal = true;
 
