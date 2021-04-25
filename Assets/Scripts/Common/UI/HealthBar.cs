@@ -7,6 +7,11 @@ public class HealthBar : MonoBehaviour
 {
     public Slider slider;
 
+    private Animator anim;
+    private int currentHP; //used to test whether or not they got hurt or healed
+    private int oldHP;
+
+
     Stats stats;
 
 
@@ -20,6 +25,8 @@ public class HealthBar : MonoBehaviour
             this.AddObserver(OnMHPDidChange, Stats.DidChangeNotification(StatTypes.MHP), stats);
             SetMaxHealth(stats[StatTypes.MHP]);
             SetHealth(stats[StatTypes.HP]);
+
+            oldHP = stats[StatTypes.HP];
         }
 
         //Debug.Log(stats);
@@ -28,6 +35,7 @@ public class HealthBar : MonoBehaviour
     void OnEnable()
     {
         stats = GetComponentInParent<Stats>();
+        anim = transform.parent.GetComponentInChildren<Animator>();
 
     }
 
@@ -39,9 +47,32 @@ public class HealthBar : MonoBehaviour
 
     void OnHPDidChange(object sender, object args)
     {
+        currentHP = stats[StatTypes.HP];
         SetHealth(stats[StatTypes.HP]);
-    }
 
+        if(anim != null)
+        {
+            if (currentHP < oldHP)
+            {
+                if (currentHP <= 0)
+                {
+                    oldHP = currentHP;
+                    anim.SetTrigger("Death");
+                }
+                else
+                {
+                    oldHP = currentHP;
+                    anim.SetTrigger("Hurt");
+                }
+                
+            }
+            else if (currentHP > oldHP)
+            {
+                oldHP = currentHP;
+            }
+        }
+        
+    }
     void OnMHPDidChange(object sender, object args)
     {
         SetMaxHealth(stats[StatTypes.MHP]);
