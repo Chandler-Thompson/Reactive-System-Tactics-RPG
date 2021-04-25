@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Sleep Shepherd
   m_EditorClassIdentifier: 
   categories:
-  - name: Ludum Dare
+  - name: Sleep Craft
     entries:
-    - PrepareForSheep
     - SlowShleepy

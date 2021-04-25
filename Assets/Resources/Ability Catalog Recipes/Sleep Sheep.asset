@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Sleep Sheep
   m_EditorClassIdentifier: 
   categories:
-  - name: Ludum Dare
+  - name: Sleep Craft
     entries:
     - Ram
+    - ForTheShleep

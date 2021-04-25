@@ -17,7 +17,6 @@ public class DurationStatusCondition : StatusCondition
 
 	void OnNewTurn (object sender, object args)
 	{
-		Debug.Log("[DurationStatusCondition] New Turn! Decrementing duration.");
 		duration--;
 		if (duration <= 0)
 			Remove();

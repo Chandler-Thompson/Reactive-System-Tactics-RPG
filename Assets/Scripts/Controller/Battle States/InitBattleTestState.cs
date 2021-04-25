@@ -18,7 +18,9 @@ public class InitBattleTestState : BattleState
 		SpawnUnits();
 		AddVictoryCondition();
 		owner.round = owner.gameObject.AddComponent<TurnOrderController>().Round();
+		Debug.Log("[InitBattleTestState] Finished initializing steps...yielding...");
 		yield return null;
+		Debug.Log("[InitBattleTestState] Moving to SelectUnitState...");
 		owner.ChangeState<SelectUnitState>();
 	}
 	

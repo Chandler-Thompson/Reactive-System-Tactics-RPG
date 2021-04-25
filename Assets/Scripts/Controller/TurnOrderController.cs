@@ -26,7 +26,7 @@ public class TurnOrderController : MonoBehaviour
 		while (true)
 		{
 			this.PostNotification(RoundBeganNotification);
-
+			//Debug.Log("[TurnOrderController] Round has begun.");
 			List<Unit> units = new List<Unit>( bc.units );
 			for (int i = 0; i < units.Count; ++i)
 			{
@@ -46,6 +46,8 @@ public class TurnOrderController : MonoBehaviour
 				{
 					bc.turn.Change(units[i]);
 					units[i].PostNotification(TurnBeganNotification);
+
+					Debug.Log("[TurnOrderController] Turn has begun.");
 
 					yield return units[i];
 

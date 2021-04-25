@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model: Sheep
   job: Warrior
-  attack: Ludum Dare/SheepBasicAttack
+  attack: Sleep Craft/SheepBasicAttack
   abilityCatalog: Sleep Sheep
   strategy: 
   locomotion: 0

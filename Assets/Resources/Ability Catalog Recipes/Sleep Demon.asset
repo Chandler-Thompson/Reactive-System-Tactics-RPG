@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Sleep Demon
   m_EditorClassIdentifier: 
   categories:
-  - name: Ludum Dare
+  - name: Sleep Craft
     entries:
-    - Sleepy
+    - Paralyzing Sleep

@@ -68,6 +68,23 @@ public class Board : MonoBehaviour
 		return tiles.ContainsKey(p) ? tiles[p] : null;
 	}
 
+	public Tile GetNextTileInDirection(Tile currTile, Directions towardsDir)
+	{
+		Point dir = DirectionToPoint(towardsDir);
+
+		Point currPos = currTile.pos;
+		while(currPos.x <= _max.x && currPos.x >= _min.x && currPos.y <= _max.y && currPos.y >= _min.y)
+		{
+			currPos = currPos + dir;
+			Tile nextTile = GetTile(currPos);
+			if (nextTile)
+				return nextTile;
+		}
+
+		return null;
+
+	}
+
 	public List<Tile> Search (Tile start, Func<Tile, Tile, bool> addTile)
 	{
 		List<Tile> retValue = new List<Tile>();
@@ -145,6 +162,23 @@ public class Board : MonoBehaviour
 		Queue<Tile> temp = a;
 		a = b;
 		b = temp;
+	}
+
+	Point DirectionToPoint (Directions direction)
+	{
+		switch(direction){
+			case Directions.North:
+				return dirs[0];
+			case Directions.South:
+				return dirs[1];
+			case Directions.West:
+				return dirs[2];
+			case Directions.East:
+				return dirs[3];
+			default:
+				return dirs[0];
+		}
+
 	}
 	#endregion
 }

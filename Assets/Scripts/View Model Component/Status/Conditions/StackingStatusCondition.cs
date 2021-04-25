@@ -53,10 +53,8 @@ public class StackingStatusCondition : StatusCondition
 						this.numStacks = this.maxStacks;
 					else
 						this.numStacks = totalStacks;
-					Debug.Log("[StackingStatusCondition] Took stacks from other "+this.stackType+" StackingStatusCondition.");
-					
+
 					otherStack.Remove();
-					Debug.Log("[StackingStatusCondition] Removed other "+this.stackType+" StackingStatusCondition.");
 
 				}
 			}

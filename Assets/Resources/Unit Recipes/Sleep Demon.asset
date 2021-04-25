@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model: Demon
   job: Rogue
-  attack: Common/Attack
+  attack: Sleep Craft/Paralyzing Sleep
   abilityCatalog: Sleep Demon
-  strategy: Basic Attack Pattern
+  strategy: Sleep Demon Attack Pattern
   locomotion: 2
   alliance: 4
   inventory: []
