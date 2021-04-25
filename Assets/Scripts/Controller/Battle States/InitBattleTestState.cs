@@ -29,8 +29,17 @@ public class InitBattleTestState : BattleState
 		owner.round = owner.gameObject.AddComponent<TurnOrderController>().Round();
 		Debug.Log("[InitBattleTestState] Finished initializing steps...yielding...");
 		yield return null;
-		Debug.Log("[InitBattleTestState] Moving to SelectUnitState...");
-		owner.ChangeState<SelectUnitState>();
+		
+		if(PlayerPrefsController.GetString(SavedData.IntroConvo).Equals(""))
+		{
+			Debug.Log("[InitBattleTestState] Moving to SelectUnitState...");
+			owner.ChangeState<SelectUnitState>();
+		}
+		else
+		{
+			Debug.Log("[InitBattleTestState] Moving to CutSceneState...");
+			owner.ChangeState<CutSceneState>();
+		}
 	}
 	
 	void SpawnUnits()

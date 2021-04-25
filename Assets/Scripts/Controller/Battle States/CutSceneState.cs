@@ -36,12 +36,20 @@ public class CutSceneState : BattleState
 			data = Resources.Load<ConversationData>(introConvo);
 		}
 
+
 		if(data)
+		{
 			conversationController.Show(data);
+		}
+		else
+		{
+			OnCompleteConversation(null, null);
+		}
 	}
 
 	public override void Exit ()
 	{
+		Debug.Log("[CutSceneState] Exiting...");
 		base.Exit ();
 		if (data)
 			Resources.UnloadAsset(data);
@@ -68,8 +76,13 @@ public class CutSceneState : BattleState
 	void OnCompleteConversation (object sender, System.EventArgs e)
 	{
 		if (IsBattleOver())
+		{
 			owner.ChangeState<EndBattleState>();
+		}
 		else
+		{
+			Debug.Log("[CutSceneState] Moving to SelectUnitState");
 			owner.ChangeState<SelectUnitState>();
+		}
 	}
 }
