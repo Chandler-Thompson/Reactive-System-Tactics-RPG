@@ -59,7 +59,7 @@ public static class UnitFactory
 		GameObject bcObj = GameObject.Find("Battle Controller");
 		BattleController bc = bcObj.GetComponent<BattleController>();
 
-		bc.units.Remove(newUnit);
+		bc.units.Remove(unit);
 
 		GameObject unitGameObject = unit.transform.gameObject;
 		GameObject.Destroy(unitGameObject);
