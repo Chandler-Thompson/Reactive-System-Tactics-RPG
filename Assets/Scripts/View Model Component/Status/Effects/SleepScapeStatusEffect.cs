@@ -7,7 +7,7 @@ public class SleepScapeStatusEffect : StatusEffect
 	
 	void OnEnable ()
 	{
-		base.initialize();
+		base.initialize("SleepScapeStatusEffect");
 
 		if(owner && stats){
 			this.AddObserver(OnHPDidChange, Stats.DidChangeNotification(StatTypes.HP), stats);

@@ -3,7 +3,15 @@ using System.Collections;
 
 public class DurationStatusCondition : StatusCondition 
 {
-	public int duration = 10;
+	public int duration { get { return _duration; } set { setDuration(value); }}
+
+	int _duration = 10;
+
+	void setDuration(int duration)
+	{
+		_duration = duration;
+		_text = _duration.ToString();
+	}
 
 	void OnEnable ()
 	{
@@ -17,8 +25,8 @@ public class DurationStatusCondition : StatusCondition
 
 	void OnNewTurn (object sender, object args)
 	{
-		duration--;
-		if (duration <= 0)
+		setDuration(_duration-1);
+		if (_duration <= 0)
 			Remove();
 	}
 }

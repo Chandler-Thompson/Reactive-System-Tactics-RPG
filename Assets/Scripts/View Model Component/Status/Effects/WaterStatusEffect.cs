@@ -9,7 +9,7 @@ public class WaterStatusEffect : StatusEffect
 
     void OnEnable()
     { 
-    	base.initialize();
+    	base.initialize("WaterStatusEffect");
     	Debug.Log("Water Status Effect Enabled!");
 
     	//Reduce unit's movement (They're water logged!)

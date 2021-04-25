@@ -14,7 +14,7 @@ public class SleepParalysisStatusEffect : StatusEffect
 
     void OnEnable()
     { 
-    	base.initialize();
+    	base.initialize("SleepParalysisStatusEffect");
 
     	if(owner)
     	{

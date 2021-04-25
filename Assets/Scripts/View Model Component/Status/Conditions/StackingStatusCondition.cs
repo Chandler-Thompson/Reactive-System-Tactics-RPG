@@ -5,10 +5,18 @@ using UnityEngine;
 public class StackingStatusCondition : StatusCondition
 {
 	public StackConditionTypes stackType;
-    public int numStacks = 1;
+    public int numStacks { get { return _numStacks; } set { setStacks(value); }}
     public int maxStacks = int.MaxValue;
 
-    private bool isOriginal = true;
+    int _numStacks = 1;
+
+	bool isOriginal = true;
+
+    void setStacks(int numStacks)
+    {
+    	_numStacks = numStacks;
+    	_text = _numStacks.ToString();
+    }
 
 	void OnEnable ()
 	{
@@ -36,7 +44,7 @@ public class StackingStatusCondition : StatusCondition
 				}
 			}
 		}
-		numStacks = 0;
+		setStacks(0);
 	}
 
 	void Update(){
@@ -50,9 +58,9 @@ public class StackingStatusCondition : StatusCondition
 
 					int totalStacks = this.numStacks + otherStack.numStacks;
 					if(totalStacks > this.maxStacks)
-						this.numStacks = this.maxStacks;
+						setStacks(this.maxStacks);
 					else
-						this.numStacks = totalStacks;
+						setStacks(totalStacks);
 
 					otherStack.Remove();
 

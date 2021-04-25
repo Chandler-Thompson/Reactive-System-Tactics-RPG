@@ -14,6 +14,8 @@ public class SleepingCurseStatusEffect : StatusEffect
 
     void OnEnable ()
     {
+        base.initialize("SleepingCurseStatusEffect");
+        
     	if(owner)
     	{
     		this.AddObserver(OnNewTurn, TurnOrderController.TurnBeganNotification, owner);

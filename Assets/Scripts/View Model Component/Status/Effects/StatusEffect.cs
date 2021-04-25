@@ -4,6 +4,9 @@ using System.Collections;
 
 public abstract class StatusEffect : MonoBehaviour 
 {
+
+	public string name { get { return _name; }}
+
 	protected Transform myParent;
 	protected StatusCondition myCondition;
 
@@ -15,7 +18,11 @@ public abstract class StatusEffect : MonoBehaviour
 
 	protected Material mainMaterial;
 
-	protected void initialize(){
+	string _name;
+
+	protected void initialize(string name){
+		_name = name;
+
 		myParent = transform.parent;
 		myCondition = this.GetComponentInChildren<StatusCondition>();
 

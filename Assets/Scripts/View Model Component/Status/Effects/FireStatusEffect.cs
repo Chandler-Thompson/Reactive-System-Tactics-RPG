@@ -8,7 +8,7 @@ public class FireStatusEffect : StatusEffect
 
     void OnEnable()
     {
-    	base.initialize();
+    	base.initialize("FireStatusEffect");
     	Debug.Log("Fire Status Effect Enabled!");
 
     	//damage owner on each new turn

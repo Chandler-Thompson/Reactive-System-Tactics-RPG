@@ -8,7 +8,7 @@ public class SheepPerviousStatusEffect : StatusEffect
 
     void OnEnable()
     {
-    	base.initialize();
+    	base.initialize("SheepPerviousStatusEffect");
 
     	//damage owner when their health would change
     	if(owner)

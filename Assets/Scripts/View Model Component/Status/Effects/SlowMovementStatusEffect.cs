@@ -9,7 +9,7 @@ public class SlowMovementStatusEffect : StatusEffect
 
     void OnEnable()
     { 
-    	base.initialize();
+    	base.initialize("SlowMovementStatusEffect");
     	Debug.Log("[SlowMovementStatusEffect] Enabled!");
 
     	//Reduce unit's movement (They're water logged!)
