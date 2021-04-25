@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class HealthBar : MonoBehaviour
 {
     public Slider slider;
+    public Image status_Psleep;
 
     [System.Serializable]
     public class StatusCounter
@@ -114,6 +116,20 @@ public class HealthBar : MonoBehaviour
         if(counterTextField && newEffectCondition)
         {
             counterTextField.text = newEffectCondition.text;
+        }
+
+        //Messing with stuff
+        Int32.TryParse(newEffectCondition.text, out int i);
+        if (i <= 0)
+        {
+            Debug.Log("gets here?");
+            counterTextField.transform.parent.gameObject.SetActive(false);
+        }
+        else if (i > 0)
+        {
+            Debug.Log("or here?");
+            Debug.Log(counterTextField);
+            counterTextField.transform.parent.gameObject.SetActive(true);
         }
         
     }
