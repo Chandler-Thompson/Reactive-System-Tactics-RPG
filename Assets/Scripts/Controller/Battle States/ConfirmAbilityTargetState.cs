@@ -18,8 +18,9 @@ public class ConfirmAbilityTargetState : BattleState
 		RefreshPrimaryStatPanel(turn.actor.tile.pos);
 		if (turn.targets.Count > 0)
 		{
-			if (driver.Current == Drivers.Human)
-				hitSuccessIndicator.Show();
+			//TODO: Uncomment below to show hit rate success indicator
+			// if (driver.Current == Drivers.Human)
+			// 	hitSuccessIndicator.Show();
 			SetTarget(0);
 		}
 		if (driver.Current == Drivers.Computer)

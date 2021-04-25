@@ -45,7 +45,7 @@ public class AbilityTargetState : BattleState
 		if (e.info == 0)
 		{
 			if (ar.directionOriented || tiles.Contains(board.GetTile(pos)))
-				owner.ChangeState<ConfirmAbilityTargetState>();
+				owner.ChangeState<ConfirmAbilityTargetState>(); //TODO: Revert to point to ConfirmAbilityTargetState to show HitRate
 		}
 		else
 		{

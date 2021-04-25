@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class SleepScapeStatusEffect : StatusEffect
 {
+	bool replace = false;
 	
 	void OnEnable ()
 	{
 		base.initialize();
-		this.AddObserver(OnHPDidChange, Stats.DidChangeNotification(StatTypes.HP), stats);
+
+		if(owner && stats){
+			this.AddObserver(OnHPDidChange, Stats.DidChangeNotification(StatTypes.HP), stats);
+		}
 
 		//Initial check, in case unit is already dead
 		OnHPDidChange(null, null);
@@ -21,14 +25,19 @@ public class SleepScapeStatusEffect : StatusEffect
 	
 	void OnHPDidChange (object sender, object args)
 	{
-		if(stats[StatTypes.HP] == 0){
-
-			if(owner.transform.name.Equals("Sleep Sheep"))
-				UnitFactory.Replace(owner, "Sleep Demon");
-			else if(owner.transform.name.Equals("Sleep Demon"))
-				UnitFactory.Replace(owner, "Sleep Sheep");
-
+		if(stats[StatTypes.HP] == 0)
+		{
+			StartCoroutine(ReplaceOnDeath());
 		}
+	}
+
+	IEnumerator ReplaceOnDeath ()
+	{
+		yield return new WaitForSeconds(2.0f); // allow death animation to finish
+		if(owner.transform.name.Equals("Sleep Sheep"))
+			UnitFactory.Replace(owner, "Sleep Demon");
+		else if(owner.transform.name.Equals("Sleep Demon"))
+			UnitFactory.Replace(owner, "Sleep Sheep");
 	}
 	
 }
