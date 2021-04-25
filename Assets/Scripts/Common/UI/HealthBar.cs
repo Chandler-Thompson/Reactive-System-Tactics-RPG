@@ -6,13 +6,16 @@ using UnityEngine.UI;
 public class HealthBar : MonoBehaviour
 {
     public Slider slider;
+    public Text sleepP_text;
 
     private Animator anim;
     private int currentHP; //used to test whether or not they got hurt or healed
     private int oldHP;
 
+    
 
     Stats stats;
+    Status status;
 
 
 
@@ -26,9 +29,17 @@ public class HealthBar : MonoBehaviour
             SetMaxHealth(stats[StatTypes.MHP]);
             SetHealth(stats[StatTypes.HP]);
 
+
             oldHP = stats[StatTypes.HP];
         }
-
+        if (status == null)
+        {
+            status = GetComponentInParent<Status>();
+        }
+        else 
+        { 
+            
+        }
         //Debug.Log(stats);
     }
 
