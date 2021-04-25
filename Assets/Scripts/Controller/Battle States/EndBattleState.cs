@@ -3,9 +3,13 @@ using System.Collections;
 
 public class EndBattleState : BattleState 
 {
+
+	GameController gc;
+
 	public override void Enter ()
 	{
 		base.Enter ();
-		Application.LoadLevel(0);
+		gc = GameObject.Find("Game Controller").GetComponent<GameController>();
+		gc.sceneController.LoadScene("Transition Scene");
 	}
 }

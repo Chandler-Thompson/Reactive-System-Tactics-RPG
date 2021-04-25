@@ -23,8 +23,6 @@ public class CutSceneState : BattleState
 				data = Resources.Load<ConversationData>("Conversations/OutroSceneWin");
 			else
 				data = Resources.Load<ConversationData>("Conversations/OutroSceneLose");
-
-			SceneManager.LoadScene("Main Menu"); //TODO: Use SceneController
 		}
 		else
 		{
