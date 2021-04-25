@@ -33,7 +33,16 @@ public class Unit : MonoBehaviour
 		anim = GetComponentInChildren<Animator>();
 	}
 
-	public void Update()
+	public void callAttackAnim()
+    {
+		if (anim != null)
+		{
+			anim.SetTrigger("Attack");
+		}
+	}
+
+
+		public void Update()
 	{
 		if (dir != oldDir)
 		{
@@ -44,7 +53,7 @@ public class Unit : MonoBehaviour
 			else if (dir == Directions.West) convertedDir = 2;
 			else if (dir == Directions.North) convertedDir = 3;
 
-			Debug.Log("Dir = " + dir);
+			//Debug.Log("Dir = " + dir);
 
 			if (anim != null)
 			{

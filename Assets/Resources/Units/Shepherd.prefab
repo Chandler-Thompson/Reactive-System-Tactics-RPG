@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5024279287677414218}
   - component: {fileID: 8676368717685487099}
   - component: {fileID: 2044664687117397323}
+  - component: {fileID: 1041109704607741887}
   m_Layer: 0
   m_Name: Shepard_01 0
   m_TagString: Untagged
@@ -97,6 +98,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
+--- !u!95 &1041109704607741887
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3897747954837531683}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d20ca459e9b0c944996f017f4a5f385a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8589779071715637590
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,7 +325,7 @@ PrefabInstance:
     - target: {fileID: 5385822600434610092, guid: b47db27b585aa934fae94cb90d5a6dfd,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.147
+      value: 1.345
       objectReference: {fileID: 0}
     - target: {fileID: 5385822600434610092, guid: b47db27b585aa934fae94cb90d5a6dfd,
         type: 3}

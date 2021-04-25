@@ -15,7 +15,8 @@ public class PerformAbilityState : BattleState
 	IEnumerator Animate ()
 	{
 		// TODO play animations, etc
-		yield return null;
+		turn.actor.callAttackAnim();
+		yield return new WaitForSeconds(1.8f);
 		ApplyAbility();
 		
 		if (IsBattleOver())
