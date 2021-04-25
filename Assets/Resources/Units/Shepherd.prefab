@@ -187,6 +187,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2637674704279283910}
     m_Modifications:
+    - target: {fileID: 1184481698400753704, guid: b47db27b585aa934fae94cb90d5a6dfd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2265933980876997552, guid: b47db27b585aa934fae94cb90d5a6dfd,
         type: 3}
       propertyPath: slider
@@ -195,13 +200,23 @@ PrefabInstance:
     - target: {fileID: 2265933980876997552, guid: b47db27b585aa934fae94cb90d5a6dfd,
         type: 3}
       propertyPath: statusCounters.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2265933980876997552, guid: b47db27b585aa934fae94cb90d5a6dfd,
         type: 3}
       propertyPath: statusCounters.Array.data[0].statusEffectName
       value: SleepParalysisStatusEffect
       objectReference: {fileID: 0}
+    - target: {fileID: 2265933980876997552, guid: b47db27b585aa934fae94cb90d5a6dfd,
+        type: 3}
+      propertyPath: statusCounters.Array.data[1].statusEffectName
+      value: SheepPerviousStatusEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 2265933980876997552, guid: b47db27b585aa934fae94cb90d5a6dfd,
+        type: 3}
+      propertyPath: statusCounters.Array.data[1].statusEffectCounterTextField
+      value: 
+      objectReference: {fileID: 3958705389063320852}
     - target: {fileID: 2697827332975857003, guid: b47db27b585aa934fae94cb90d5a6dfd,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -385,5 +400,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3958705389063320852 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 815296626129425587, guid: b47db27b585aa934fae94cb90d5a6dfd,
+    type: 3}
+  m_PrefabInstance: {fileID: 4440732189580059047}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

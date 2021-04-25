@@ -103,10 +103,14 @@ public class HealthBar : MonoBehaviour
 
         StatusEffect newEffect = args as StatusEffect;
 
+        Debug.Log("[HealthBar] Searching for "+newEffect.name+"...");
+
         foreach(StatusCounter counter in statusCounters)
         {
+            Debug.Log("[HealthBar] TextField: "+counter.statusEffectName);
             if (counter.statusEffectName.Equals(newEffect.name))
             {
+                Debug.Log("[HealthBar] Match found!");
                 counterTextField = counter.statusEffectCounterTextField;
             }
         }
@@ -122,12 +126,10 @@ public class HealthBar : MonoBehaviour
         Int32.TryParse(newEffectCondition.text, out int i);
         if (i <= 0)
         {
-            Debug.Log("gets here?");
             counterTextField.transform.parent.gameObject.SetActive(false);
         }
         else if (i > 0)
         {
-            Debug.Log("or here?");
             Debug.Log(counterTextField);
             counterTextField.transform.parent.gameObject.SetActive(true);
         }

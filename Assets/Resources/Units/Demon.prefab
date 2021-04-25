@@ -195,13 +195,13 @@ PrefabInstance:
     - target: {fileID: 2265933980876997552, guid: b47db27b585aa934fae94cb90d5a6dfd,
         type: 3}
       propertyPath: statusCounters.Array.data[1].statusEffectName
-      value: SleepParalysisStatusEffect
+      value: SheepPerviousStatusEffect
       objectReference: {fileID: 0}
     - target: {fileID: 2265933980876997552, guid: b47db27b585aa934fae94cb90d5a6dfd,
         type: 3}
       propertyPath: statusCounters.Array.data[1].statusEffectCounterTextField
       value: 
-      objectReference: {fileID: 4280306316314530580}
+      objectReference: {fileID: 3958705389063320852}
     - target: {fileID: 2697827332975857003, guid: b47db27b585aa934fae94cb90d5a6dfd,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -375,9 +375,9 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 4440732189580059047}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4280306316314530580 stripped
+--- !u!114 &3958705389063320852 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 488101315005002419, guid: b47db27b585aa934fae94cb90d5a6dfd,
+  m_CorrespondingSourceObject: {fileID: 815296626129425587, guid: b47db27b585aa934fae94cb90d5a6dfd,
     type: 3}
   m_PrefabInstance: {fileID: 4440732189580059047}
   m_PrefabAsset: {fileID: 0}
