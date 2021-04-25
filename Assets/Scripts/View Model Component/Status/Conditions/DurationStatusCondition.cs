@@ -17,12 +17,12 @@ public class DurationStatusCondition : StatusCondition
 	{
 		base.Update();
 		
-		this.AddObserver(OnNewTurn, TurnOrderController.RoundBeganNotification);
+		this.AddObserver(OnNewTurn, TurnOrderController.TurnBeganNotification, parentUnit);
 	}
 
 	void OnDisable ()
 	{
-		this.RemoveObserver(OnNewTurn, TurnOrderController.RoundBeganNotification);
+		this.RemoveObserver(OnNewTurn, TurnOrderController.TurnBeganNotification, parentUnit);
 	}
 
 	void OnNewTurn (object sender, object args)

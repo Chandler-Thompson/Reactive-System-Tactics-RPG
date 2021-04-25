@@ -8,6 +8,7 @@ public class StatusCondition : MonoBehaviour
 
 	public string text { get { return _text; }}
 
+	protected Unit parentUnit;
 	protected Status parentStatus;
 	protected StatusEffect parentEffect;
 
@@ -15,12 +16,12 @@ public class StatusCondition : MonoBehaviour
 
 	protected void UpdateText(string text){
 		_text = text;
-		Unit owner = this.GetComponentInParent<Unit>();
-		Debug.Log("[StatusCondition] ParentEffect: "+parentEffect);
-		owner.PostNotification(UpdatedNotification, parentEffect);
+		parentUnit.PostNotification(UpdatedNotification, parentEffect);
 	}
 
 	protected void Update(){
+		if(parentUnit == null)
+			parentUnit = this.GetComponentInParent<Unit>();
 		if(parentStatus == null)
 			parentStatus = GetComponentInParent<Status>();
 		if(parentEffect == null)
