@@ -22,11 +22,14 @@ public class SceneController : MonoBehaviour
     {
     	if(!GetCurrentScene().Equals("Transition Scene"))
     	{
+    		Debug.Log("[SceneController] Loading Transition Scene...");
     		LoadScene("Transition Scene");
     	}
     	else
     	{
+    		Debug.Log("[SceneController] Loading Next Battle Scene...");
     		LoadNextBattle();
+    		LoadScene("Battle Testing");
     	}
     }
 

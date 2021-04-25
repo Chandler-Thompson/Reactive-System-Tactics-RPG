@@ -20,15 +20,24 @@ public class CutSceneState : BattleState
 		if (IsBattleOver())
 		{
 			if (DidPlayerWin())
-				data = Resources.Load<ConversationData>("Conversations/OutroSceneWin");
+			{
+				string winConvo = PlayerPrefsController.GetString(SavedData.OutroConvoWin);
+				data = Resources.Load<ConversationData>(winConvo);
+			}
 			else
-				data = Resources.Load<ConversationData>("Conversations/OutroSceneLose");
+			{
+				string loseConvo = PlayerPrefsController.GetString(SavedData.OutroConvoLose);
+				data = Resources.Load<ConversationData>(loseConvo);
+			}
 		}
 		else
-		{
-			data = Resources.Load<ConversationData>("Conversations/IntroScene");
+		{	
+			string introConvo = PlayerPrefsController.GetString(SavedData.IntroConvo);
+			data = Resources.Load<ConversationData>(introConvo);
 		}
-		conversationController.Show(data);
+
+		if(data)
+			conversationController.Show(data);
 	}
 
 	public override void Exit ()
