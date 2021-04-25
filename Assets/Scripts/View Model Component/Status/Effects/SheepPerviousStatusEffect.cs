@@ -9,7 +9,6 @@ public class SheepPerviousStatusEffect : StatusEffect
     void OnEnable()
     {
     	base.initialize();
-    	Debug.Log("[SheepPerviousStatusEffect] Enabled!");
 
     	//damage owner when their health would change
     	if(owner)
@@ -24,7 +23,6 @@ public class SheepPerviousStatusEffect : StatusEffect
     void OnDisable ()
 	{
 		
-		Debug.Log("[SheepPerviousStatusEffect] Disabled!");
 		this.RemoveObserver(OnHPWillChange, Stats.WillChangeNotification(StatTypes.HP), stats);
 
 		//Remove status effect visual

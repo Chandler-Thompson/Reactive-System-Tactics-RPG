@@ -18,18 +18,15 @@ public class SleepParalysisStatusEffect : StatusEffect
 
     	if(owner)
     	{
-    		this.AddObserver(OnHPDidChange, Stats.DidChangeNotification(StatTypes.HP), stats);
     		this.AddObserver(OnNewTurn, TurnOrderController.TurnBeganNotification, owner);
     	}
 
     	//Show the status effect visually
-    	Debug.Log("[SleepParalysisStatusEffect] Enabled!");
     }
 
     void OnDisable ()
 	{	
 		currNumStage = (myCondition as StackingStatusCondition).numStacks;
-		Debug.Log("[SleepParalysisStatusEffect] Disabling with "+currNumStage+" stacks...");
 
 		//Revert the debuffs placed by current stage and those below it
 		if(currNumStage >= 1)
@@ -45,21 +42,12 @@ public class SleepParalysisStatusEffect : StatusEffect
 			RevertStage3();
 		}
 
-		this.RemoveObserver(OnHPDidChange, Stats.DidChangeNotification(StatTypes.HP), stats);
 		this.RemoveObserver(OnNewTurn, TurnOrderController.TurnBeganNotification, owner);
 
-		Debug.Log("[SleepParalysisStatusEffect] Disabled!");
-	}
-
-	void OnHPDidChange (object sender, object args)
-	{
-		// if(currNumStage == 3)
-		// 	Stage3();
 	}
 
 	void OnNewTurn (object sender, object args)
 	{
-		Debug.Log("[ParalysisStatusEffect] New turn. Decrementing stacks.");
 		(myCondition as StackingStatusCondition).numStacks--;	
 	}
 
@@ -78,7 +66,6 @@ public class SleepParalysisStatusEffect : StatusEffect
 	{
 		if(statsChanged)
 		{
-			Debug.Log("[SleepParalysisStatusEffect] Reverting Stage 1...");
 			stats.SetValue(StatTypes.MOV, stats[StatTypes.MOV]+amountSlowedStage1, false);
 			amountSlowedStage1 = 0;
 		}
@@ -99,10 +86,7 @@ public class SleepParalysisStatusEffect : StatusEffect
 	{
 		if(statsChanged)
 		{
-			Debug.Log("[SleepParalysisStatusEffect] Reverting Stage 2...");
-			Debug.Log("[SleepParalysisStatusEffect]\tCurr MOV:"+stats[StatTypes.MOV]+" | Returned MOV:"+amountSlowedStage2);
 			stats.SetValue(StatTypes.MOV, stats[StatTypes.MOV]+amountSlowedStage2, false);
-			Debug.Log("[SleepParalysisStatusEffect]\tCurr MOV:"+stats[StatTypes.MOV]);
 			amountSlowedStage2 = 0;
 		}
 	}
@@ -114,7 +98,7 @@ public class SleepParalysisStatusEffect : StatusEffect
 
 		Tile newTile = bc.board.GetNextTileInDirection(owner.tile, Directions.West);
 		while (newTile != null && newTile.content != null)
-			newTile = bc.board.GetNextTileInDirection(owner.tile, Directions.West);
+			newTile = bc.board.GetNextTileInDirection(newTile, Directions.West);
 
 		if(newTile != null){
 			owner.Place(newTile);
@@ -127,7 +111,6 @@ public class SleepParalysisStatusEffect : StatusEffect
 
 	void RevertStage3 ()
 	{
-		Debug.Log("[SleepParalysisStatusEffect] Reverting Stage 3...");
 		//Nothing to revert...
 	}
 

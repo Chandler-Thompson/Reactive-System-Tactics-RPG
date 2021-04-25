@@ -36,16 +36,51 @@ public static class UnitFactory
 		return obj;
 	}
 
-	public static GameObject Change (Unit unit, string changeTo)
+	public static GameObject Replace (Unit unit, string changeTo)
 	{
-		int level = unit.transform.parent.GetComponentInChildren<Stats>()[StatTypes.LVL];
-		return Create(changeTo, level);
+		UnitRecipe recipe = Resources.Load<UnitRecipe>("Unit Recipes/" + changeTo);
+		if (recipe == null)
+		{
+			Debug.LogError("No Unit Recipe for name: " + changeTo);
+			return null;
+		}
+		return Replace(unit, recipe);
 	}
 
-	public static GameObject Change (Unit unit, UnitRecipe changeTo)
+	public static GameObject Replace (Unit unit, UnitRecipe changeTo)
 	{
 		int level = unit.transform.parent.GetComponentInChildren<Stats>()[StatTypes.LVL];
-		return Create(changeTo, level);
+		GameObject instance = Create(changeTo, level);
+
+		Unit newUnit = instance.GetComponent<Unit>();
+
+		Situate(newUnit, unit.tile, unit.dir);
+
+		GameObject bcObj = GameObject.Find("Battle Controller");
+		BattleController bc = bcObj.GetComponent<BattleController>();
+
+		bc.units.Remove(newUnit);
+
+		GameObject unitGameObject = unit.transform.gameObject;
+		GameObject.Destroy(unitGameObject);
+
+		return instance;
+	}
+
+	public static void Situate (Unit unit, Tile tile, Directions facingDir)
+	{
+		GameObject instance = unit.gameObject;
+		GameObject unitContainer = GameObject.Find("Units");
+		instance.transform.SetParent(unitContainer.transform);
+
+		unit.Place(tile);
+		unit.dir = facingDir;
+		unit.Match();
+			
+		GameObject bcObj = GameObject.Find("Battle Controller");
+		BattleController bc = bcObj.GetComponent<BattleController>();
+		bc.units.Add(unit);
+
 	}
 	#endregion
 

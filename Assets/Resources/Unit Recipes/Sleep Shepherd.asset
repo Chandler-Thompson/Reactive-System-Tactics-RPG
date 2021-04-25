@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model: Shepherd
   job: Wizard
-  attack: Sleep Craft/PrepareForSheep
+  attack: Sleep Craft/Prepare For Sheep
   abilityCatalog: Sleep Shepherd
   strategy: 
   locomotion: 0
