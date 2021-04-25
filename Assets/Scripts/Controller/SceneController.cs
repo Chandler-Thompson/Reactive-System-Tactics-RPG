@@ -22,11 +22,14 @@ public class SceneController : MonoBehaviour
     {
     	if(!GetCurrentScene().Equals("Transition Scene"))
     	{
+    		Debug.Log("[SceneController] Loading Transition Scene...");
     		LoadScene("Transition Scene");
     	}
     	else
     	{
+    		Debug.Log("[SceneController] Loading Next Battle Scene...");
     		LoadNextBattle();
+    		LoadScene("Battle Testing");
     	}
     }
 
@@ -37,7 +40,7 @@ public class SceneController : MonoBehaviour
         switch(currLevel)
         {
             case 0: // Battle 1
-                LoadBattle(3, 2, "Level_3", "", "", "");
+                LoadBattle(3, 1, "Level_3", "Conversations/IntroScene", "Conversations/OutroSceneWin", "Conversations/OutroSceneLose");
                 break;
             case 1: // Battle 2
                 LoadBattle(10, 2, "Battle_2", "", "", "");

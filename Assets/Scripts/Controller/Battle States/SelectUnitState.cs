@@ -5,8 +5,8 @@ public class SelectUnitState : BattleState
 {
 	public override void Enter ()
 	{
-		base.Enter ();
 		Debug.Log("[SelectUnitState] Entered State.");
+		base.Enter ();
 		StartCoroutine("ChangeCurrentUnit");
 	}
 

@@ -20,19 +20,36 @@ public class CutSceneState : BattleState
 		if (IsBattleOver())
 		{
 			if (DidPlayerWin())
-				data = Resources.Load<ConversationData>("Conversations/OutroSceneWin");
+			{
+				string winConvo = PlayerPrefsController.GetString(SavedData.OutroConvoWin);
+				data = Resources.Load<ConversationData>(winConvo);
+			}
 			else
-				data = Resources.Load<ConversationData>("Conversations/OutroSceneLose");
+			{
+				string loseConvo = PlayerPrefsController.GetString(SavedData.OutroConvoLose);
+				data = Resources.Load<ConversationData>(loseConvo);
+			}
+		}
+		else
+		{	
+			string introConvo = PlayerPrefsController.GetString(SavedData.IntroConvo);
+			data = Resources.Load<ConversationData>(introConvo);
+		}
+
+
+		if(data)
+		{
+			conversationController.Show(data);
 		}
 		else
 		{
-			data = Resources.Load<ConversationData>("Conversations/IntroScene");
+			OnCompleteConversation(null, null);
 		}
-		conversationController.Show(data);
 	}
 
 	public override void Exit ()
 	{
+		Debug.Log("[CutSceneState] Exiting...");
 		base.Exit ();
 		if (data)
 			Resources.UnloadAsset(data);
@@ -59,8 +76,13 @@ public class CutSceneState : BattleState
 	void OnCompleteConversation (object sender, System.EventArgs e)
 	{
 		if (IsBattleOver())
+		{
 			owner.ChangeState<EndBattleState>();
+		}
 		else
+		{
+			Debug.Log("[CutSceneState] Moving to SelectUnitState");
 			owner.ChangeState<SelectUnitState>();
+		}
 	}
 }
