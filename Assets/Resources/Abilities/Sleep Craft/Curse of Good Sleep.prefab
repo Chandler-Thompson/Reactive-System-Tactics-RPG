@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5999097610859743072
+--- !u!1 &3641115221881779822
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,85 +8,99 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5187160598960889316}
-  - component: {fileID: 4379171297307389846}
-  - component: {fileID: 2663733227086284715}
-  - component: {fileID: 6530832012940130363}
-  - component: {fileID: -7547915773936264501}
+  - component: {fileID: 6338238495840897799}
+  - component: {fileID: -3738242433816422942}
+  - component: {fileID: 4748699690478641137}
+  - component: {fileID: 1318487331326866811}
+  - component: {fileID: -6841922612619414671}
+  - component: {fileID: 5959796631941368768}
   m_Layer: 0
-  m_Name: Ram
+  m_Name: Curse of Good Sleep
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5187160598960889316
+--- !u!4 &6338238495840897799
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5999097610859743072}
+  m_GameObject: {fileID: 3641115221881779822}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 824731161643306605}
+  - {fileID: 6453976388436869262}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4379171297307389846
+--- !u!114 &-3738242433816422942
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5999097610859743072}
+  m_GameObject: {fileID: 3641115221881779822}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 26e1788e9444143a5a79ea3477544eb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2663733227086284715
+--- !u!114 &4748699690478641137
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5999097610859743072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a8adfc5535c647298972755c76f8056, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  horizontal: 5
-  vertical: 3
---- !u!114 &6530832012940130363
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5999097610859743072}
+  m_GameObject: {fileID: 3641115221881779822}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ffd7ea7b3905740319e4815a4502c137, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-7547915773936264501
+--- !u!114 &1318487331326866811
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5999097610859743072}
+  m_GameObject: {fileID: 3641115221881779822}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40a5abd33e9fb43f5b477e331e4a0e84, type: 3}
+  m_Script: {fileID: 11500000, guid: fef707289531f4ed6aeb03202bbe1934, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horizontal: 5
+  vertical: 2147483647
+--- !u!114 &-6841922612619414671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3641115221881779822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e98292743344d401d9daffa7126b07bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   level: 10
---- !u!1 &8038783796264443577
+--- !u!114 &5959796631941368768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3641115221881779822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1449afc18e4a47038c694139eb7df52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 10
+--- !u!1 &4541624572359568415
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,62 +108,69 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 824731161643306605}
-  - component: {fileID: 6432647047151245673}
-  - component: {fileID: 1503455837599769697}
-  - component: {fileID: 1502892096974587439}
+  - component: {fileID: 6453976388436869262}
+  - component: {fileID: 2546106088347276307}
+  - component: {fileID: 8220392094002031641}
+  - component: {fileID: 4284449777136866741}
   m_Layer: 0
-  m_Name: Damage
+  m_Name: Inflict SheepPervious
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &824731161643306605
+--- !u!4 &6453976388436869262
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8038783796264443577}
+  m_GameObject: {fileID: 4541624572359568415}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 5187160598960889316}
+  m_Father: {fileID: 6338238495840897799}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6432647047151245673
+--- !u!114 &2546106088347276307
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8038783796264443577}
+  m_GameObject: {fileID: 4541624572359568415}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a05a8af6d47c44e7ad11d705acfed06, type: 3}
+  m_Script: {fileID: 11500000, guid: ee2ed207f0c5a4bf0a86d5019ebb202c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1503455837599769697
+  statusName: SleepingCurseStatusEffect
+  isStackable: 1
+  initialStacks: 1
+  hasMaxStacks: 0
+  maxStacks: 0
+  isLimitedDuration: 0
+  duration: 0
+--- !u!114 &8220392094002031641
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8038783796264443577}
+  m_GameObject: {fileID: 4541624572359568415}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bf0e9adc558145a393283c0c8785881, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1502892096974587439
+--- !u!114 &4284449777136866741
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8038783796264443577}
+  m_GameObject: {fileID: 4541624572359568415}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f07da020220214cb5a3bf83485efe74b, type: 3}

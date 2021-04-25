@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SheepPerviousStatusEffect : StatusEffect
 {
-	int damageMultiplier = 10;
+	int damageMultiplier = 2;
 
     void OnEnable()
     {

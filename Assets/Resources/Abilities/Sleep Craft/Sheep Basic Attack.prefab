@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 3849486771671516734}
   - component: {fileID: 982234596814759529}
-  - component: {fileID: -6391987715421843747}
   - component: {fileID: -427899719661014740}
   - component: {fileID: 3607680153832048872}
+  - component: {fileID: 2823020406617145464}
   m_Layer: 0
-  m_Name: SheepBasicAttack
+  m_Name: Sheep Basic Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,19 +47,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26e1788e9444143a5a79ea3477544eb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-6391987715421843747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6635245195766532500}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e98292743344d401d9daffa7126b07bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  level: 10
 --- !u!114 &-427899719661014740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,6 +73,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10818c1677de84b63ae618cba26e2f2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2823020406617145464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6635245195766532500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40a5abd33e9fb43f5b477e331e4a0e84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 10
 --- !u!1 &8268149083480017416
 GameObject:
   m_ObjectHideFlags: 0
