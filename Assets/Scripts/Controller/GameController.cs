@@ -7,13 +7,14 @@ public class GameController : MonoBehaviour
 
 	public SceneController sceneController;
 
+	bool loaded = true;
+
 	void Awake()
 	{
 		DontDestroyOnLoad(this.gameObject);
 
 		//TODO: Implement full save/load system and real initializations for game instead of this
  		// "Save" battle data before being loaded by the Battle Controller
-		LoadBattle1();
 
 	}
 
@@ -26,78 +27,74 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(sceneController.GetCurrentScene().Equals("Transition Scene"))
+        Debug.Log("tick");
+        if(sceneController.GetCurrentScene().Equals("Transition Scene") && !loaded)
         {
+        	int currLevel = PlayerPrefsController.GetInt(SavedData.CurrLevelNum);
 
+            //"Conversations/IntroScene", "Conversations/OutroSceneWin", "Conversations/OutroSceneLose"
+        	switch(currLevel)
+        	{
+                case 0: // Battle 1
+                    LoadBattle(3, 2, "Level_3", "", "", "");
+                    break;
+        		case 1: // Battle 2
+        			LoadBattle(10, 2, "Battle_2", "", "", "");
+        			break;
+        		case 2: // Battle 3
+        			LoadBattle(10, 3, "Battle_3", "", "", "");
+        			break;
+    			case 3: // Battle 4
+    				LoadBattle(10, 4, "Battle_4", "", "", "");
+    				break;
+    			case 4: // Battle 5
+    				LoadBattle(10, 5, "Battle_5", "", "", "");
+    				break;
+    			case 5:
+    				LoadWinningContent();
+    				break;
+    			default:
+    				Debug.Log("[GameController] Unrecognizable level number stored.");
+                    break;
+        	}
+        }
+        else
+        {
+        	loaded = false;
         }
     }
 
-    void LoadBattle1()
+    void LoadBattle(int numSleepDemons, int levelNum, string levelName, string introConvo, string outroConvoWin, string outroConvoLose)
     {
-    	PlayerPrefsController.StoreInt(SavedData.CurrLevelNum, 1);
-    	PlayerPrefsController.StoreString(SavedData.CurrLevelName, "Level_3");
-
-		List<string> unitRecipes = new List<string> {"Sleep Shepherd", "Sleep Sheep", "Sleep Demon", "Sleep Demon", "Sleep Demon"};
-		PlayerPrefsController.StoreStringList(SavedData.CurrLevelUnitRecipes, unitRecipes);
-
-		List<int> unitLevels = new List<int> {1,1,1,1,1};
-		PlayerPrefsController.StoreIntList(SavedData.CurrLevelUnitLevels, unitLevels);
-    }
-
-    void LoadBattle2()
-    {
-    	PlayerPrefsController.StoreInt(SavedData.CurrLevelNum, 2);
-    	PlayerPrefsController.StoreString(SavedData.CurrLevelName, "Level_3");
+    	PlayerPrefsController.StoreInt(SavedData.CurrLevelNum, levelNum);
+    	PlayerPrefsController.StoreString(SavedData.CurrLevelName, levelName);
 
     	List<string> unitRecipes = new List<string>();
     	List<int> unitLevels = new List<int>();
 
-    	for(int i = 0; i < )
+    	unitRecipes.Add("Sleep Shepherd");
+    	unitRecipes.Add("Sleep Sheep");
 
-    	PlayerPrefsController.StoreStringList(SavedData.CurrLevelUnitRecipes);
-    	PlayerPrefsController.StoreStringList(SavedData.CurrLevelUnitLevels);
+    	unitLevels.Add(1);
+    	unitLevels.Add(1);
+
+    	for(int i = 0; i < numSleepDemons; i++)
+    	{
+    		unitRecipes.Add("Sleep Demon");
+    		unitLevels.Add(1);
+    	}
+
+    	PlayerPrefsController.StoreStringList(SavedData.CurrLevelUnitRecipes, unitRecipes);
+    	PlayerPrefsController.StoreIntList(SavedData.CurrLevelUnitLevels, unitLevels);
+
+    	PlayerPrefsController.StoreString(SavedData.IntroConvo, introConvo);
+    	PlayerPrefsController.StoreString(SavedData.OutroConvoWin, outroConvoWin);
+        PlayerPrefsController.StoreString(SavedData.OutroConvoLose, outroConvoLose);
     }
 
-    void LoadBattle3()
+    void LoadWinningContent()
     {
-    	PlayerPrefsController.StoreInt(SavedData.CurrLevelNum, 3);
-    	PlayerPrefsController.StoreString(SavedData.CurrLevelName, "Level_3");
-
-    	List<string> unitRecipes = new List<string>();
-    	List<int> unitLevels = new List<int>();
-
-    	for(int i = 0; i < )
-
-    	PlayerPrefsController.StoreStringList(SavedData.CurrLevelUnitRecipes);
-    	PlayerPrefsController.StoreStringList(SavedData.CurrLevelUnitLevels);
-    }
-
-    void LoadBattle4()
-    {
-    	PlayerPrefsController.StoreInt(SavedData.CurrLevelNum, 4);
-    	PlayerPrefsController.StoreString(SavedData.CurrLevelName, "Level_3");
-
-    	List<string> unitRecipes = new List<string>();
-    	List<int> unitLevels = new List<int>();
-
-    	for(int i = 0; i < )
-
-    	PlayerPrefsController.StoreStringList(SavedData.CurrLevelUnitRecipes);
-    	PlayerPrefsController.StoreStringList(SavedData.CurrLevelUnitLevels);
-    }
-
-    void LoadBattle5()
-    {
-    	PlayerPrefsController.StoreInt(SavedData.CurrLevelNum, 5);
-    	PlayerPrefsController.StoreString(SavedData.CurrLevelName, "Level_3");
-
-    	List<string> unitRecipes = new List<string>();
-    	List<int> unitLevels = new List<int>();
-
-    	for(int i = 0; i < )
-
-    	PlayerPrefsController.StoreStringList(SavedData.CurrLevelUnitRecipes);
-    	PlayerPrefsController.StoreStringList(SavedData.CurrLevelUnitLevels);
+    	//Nothing as of yet...
     }
 
 }
