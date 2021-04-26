@@ -7,6 +7,7 @@ public class SceneController : MonoBehaviour
 {
 
 	//GameObject transition;
+    List<int> scoreList;
 
 	public string GetCurrentScene()
 	{
@@ -15,12 +16,20 @@ public class SceneController : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
+        
     	SceneManager.LoadScene(sceneName);
     }
 
     public void LoadNextScene()
     {
-    	if(!GetCurrentScene().Equals("Transition Scene"))
+
+        scoreList = PlayerPrefsController.GetIntList(SavedData.LevelScores);
+
+        if(scoreList != null && scoreList[scoreList.Count-1] != 0)
+        {
+            LoadScene("Game Done");
+        }
+    	else if(!GetCurrentScene().Equals("Transition Scene"))
     	{
     		Debug.Log("[SceneController] Loading Transition Scene...");
     		LoadScene("Transition Scene");
@@ -31,6 +40,7 @@ public class SceneController : MonoBehaviour
     		LoadNextBattle();
     		LoadScene("Battle Testing");
     	}
+
     }
 
     public void LoadNextBattle(){
@@ -95,7 +105,7 @@ public class SceneController : MonoBehaviour
 
     void LoadWinningContent()
     {
-    	//Nothing as of yet...
+    	LoadScene("Game Done");
     }
 
 }
