@@ -9,6 +9,9 @@ public class HealthBar : MonoBehaviour
     public Slider slider;
     public Image status_Psleep;
 
+    public AudioSource hurt; 
+    public AudioSource death;
+
     [System.Serializable]
     public class StatusCounter
     {
@@ -75,11 +78,13 @@ public class HealthBar : MonoBehaviour
                 {
                     oldHP = currentHP;
                     anim.SetTrigger("Death");
+                    death.Play();
                 }
                 else
                 {
                     oldHP = currentHP;
                     anim.SetTrigger("Hurt");
+                    hurt.Play();
                 }
                 
             }

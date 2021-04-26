@@ -3,13 +3,14 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba2db5bac6dbc4813ba1d0a4dcd05f69, type: 3}
-  m_Name: Level_1
+  m_Name: NREM Stage 3
   m_EditorClassIdentifier: 
   tiles:
   - {x: 4, y: 3, z: 5}
@@ -181,3 +182,5 @@ MonoBehaviour:
   - {x: 1, y: 1, z: 11}
   - {x: 0, y: 1, z: 3}
   - {x: 1, y: 1, z: 3}
+  playerSpawns: []
+  cpuSpawns: []
