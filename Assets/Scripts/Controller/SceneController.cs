@@ -49,7 +49,7 @@ public class SceneController : MonoBehaviour
         switch(currLevel)
         {
             case 0: // Battle 1 NREM Stage 1
-                LoadBattle(0, 5, "NREM Stage 1", "", "", "");
+                LoadBattle(0, 5, "NREM Stage 1", "Conversations/IntroScene", "Conversations/OutroSceneWin", "Conversations/OutroSceneLose");
                 break;
             case 1: // Battle 2
                 LoadBattle(1, 4, "NREM Stage 2", "", "", "");

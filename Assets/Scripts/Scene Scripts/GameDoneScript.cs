@@ -128,7 +128,13 @@ public class GameDoneScript : MonoBehaviour
                 }
             }
         }
+        StartCoroutine(Loading());
+    }
 
+    IEnumerator Loading()
+    {
+        yield return new WaitForSeconds(5f);
+        GameObject.Find("Game Controller").GetComponent<GameController>().sceneController.Reset();
     }
 
     void Update()
