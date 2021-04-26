@@ -94,7 +94,19 @@ public class InitBattleTestState : BattleState
 	
 	void AddVictoryCondition ()
 	{
-		DefeatAllEnemiesVictoryCondition vc = owner.gameObject.AddComponent<DefeatAllEnemiesVictoryCondition>();
+		//DefeatAllEnemiesVictoryCondition vc = owner.gameObject.AddComponent<DefeatAllEnemiesVictoryCondition>();
+		
+		SleepScapeVictoryCondition vc = owner.gameObject.AddComponent<SleepScapeVictoryCondition>();
+		foreach(Unit unit in units)
+		{
+			if (unit.transform.gameObject.name.Equals("Sleep Shepherd"))
+			{
+				vc.hero = unit;
+				return;
+			}
+		}
+		
+		
 		// DefeatTargetVictoryCondition vc = owner.gameObject.AddComponent<DefeatTargetVictoryCondition>();
 		// Unit enemy = units[ units.Count - 1 ];
 		// vc.target = enemy;

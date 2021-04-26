@@ -5,7 +5,6 @@ public class SelectUnitState : BattleState
 {
 	public override void Enter ()
 	{
-		Debug.Log("[SelectUnitState] Entered State.");
 		base.Enter ();
 		StartCoroutine("ChangeCurrentUnit");
 	}
@@ -18,11 +17,25 @@ public class SelectUnitState : BattleState
 
 	IEnumerator ChangeCurrentUnit ()
 	{
-		Debug.Log("[SelectUnitState] Moving to next round.");
 		owner.round.MoveNext();
 		SelectTile(turn.actor.tile.pos);
 		RefreshPrimaryStatPanel(pos);
 		yield return null;
-		owner.ChangeState<CommandSelectionState>();
+		if (IsBattleOver())
+		{
+			if(PlayerPrefsController.GetString(SavedData.OutroConvoWin).Equals("") 
+				|| PlayerPrefsController.GetString(SavedData.OutroConvoLose).Equals(""))
+			{
+				owner.ChangeState<EndBattleState>();
+			}
+			else
+			{
+				owner.ChangeState<CutSceneState>();
+			}
+		}
+		else
+		{
+			owner.ChangeState<CommandSelectionState>();
+		}
 	}
 }

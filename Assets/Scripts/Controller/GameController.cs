@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour
 		//TODO: Implement full save/load system and real initializations for game instead of this
  		// "Save" battle data before being loaded by the Battle Controller
         PlayerPrefsController.StoreInt(SavedData.CurrLevelNum, 0);
+        PlayerPrefsController.StoreIntList(SavedData.LevelScores, new List<int> {0,0,0,0,0});
 
 	}
 
