@@ -144,5 +144,6 @@ public class GameDoneScript : MonoBehaviour
         Debug.Log("[GameDoneScript] boop.");
         gc.sceneController.Reset();
     }
+   
 
 }
