@@ -61,7 +61,7 @@ public class TransitionScript : MonoBehaviour
                 }
                 if (levelScores[i] == 0)
                 {
-                    orb3sprite = empty;
+                    orb3.sprite = empty;
                 }
                 if (levelScores[i] == 1)
                 {
