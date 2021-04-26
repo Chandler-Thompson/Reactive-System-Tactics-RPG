@@ -52,12 +52,16 @@ public class BattleController : StateMachine
 	//NOTE: ONLY FOR TESTING PURPOSES!!!
 	public void LoadNextLevel(int score)
 	{
-		int currLevel = PlayerPrefsController.GetInt(SavedData.CurrLevelNum);
-		List<int> levelScores = PlayerPrefsController.GetIntList(SavedData.LevelScores);
-		levelScores[currLevel] = score;
-		PlayerPrefsController.StoreIntList(SavedData.LevelScores, levelScores);
+		Alliances victor = (score == 1) ? Alliances.Hero : (score == -1) ? Alliances.Enemy : Alliances.None;
 
-		GameObject.Find("Game Controller").GetComponent<GameController>().sceneController.LoadNextScene();
+		GetComponent<BaseVictoryCondition>().Victor = victor;
+		ChangeState<EndBattleState>();
+		// int currLevel = PlayerPrefsController.GetInt(SavedData.CurrLevelNum);
+		// List<int> levelScores = PlayerPrefsController.GetIntList(SavedData.LevelScores);
+		// levelScores[currLevel] = score;
+		// PlayerPrefsController.StoreIntList(SavedData.LevelScores, levelScores);
+
+		// GameObject.Find("Game Controller").GetComponent<GameController>().sceneController.LoadNextScene();
 	}
 
 }

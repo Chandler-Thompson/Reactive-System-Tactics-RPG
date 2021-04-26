@@ -19,6 +19,7 @@ public class EndBattleState : BattleState
 		if(owner.GetComponent<BaseVictoryCondition>().Victor == Alliances.Enemy)
 			levelScores[currLevel] = -1;
 
+		PlayerPrefsController.StoreInt(SavedData.CurrLevelNum, currLevel+1);
 		PlayerPrefsController.StoreIntList(SavedData.LevelScores, levelScores);
 
 		gc = GameObject.Find("Game Controller").GetComponent<GameController>();

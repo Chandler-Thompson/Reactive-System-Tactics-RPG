@@ -16,7 +16,6 @@ public class SceneController : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
-        
     	SceneManager.LoadScene(sceneName);
     }
 
@@ -50,19 +49,19 @@ public class SceneController : MonoBehaviour
         switch(currLevel)
         {
             case 0: // Battle 1 NREM Stage 1
-                LoadBattle(5, 1, "NREM Stage 1", "", "", "");
+                LoadBattle(0, 5, "NREM Stage 1", "", "", "");
                 break;
             case 1: // Battle 2
-                LoadBattle(4, 2, "NREM Stage 2", "", "", "");
+                LoadBattle(1, 4, "NREM Stage 2", "", "", "");
                 break;
             case 2: // Battle 3
-                LoadBattle(5, 3, "NREM Stage 3", "", "", "");
+                LoadBattle(2, 5, "NREM Stage 3", "", "", "");
                 break;
             case 3: // Battle 4
-                LoadBattle(6, 4, "REM Sleep", "", "", "");
+                LoadBattle(3, 6, "REM Sleep", "", "", "");
                 break;
             case 4: // Battle 5
-                LoadBattle(4, 5, "Dreamscape", "", "", "");
+                LoadBattle(4, 4, "Dreamscape", "", "", "");
                 break;
             case 5:
                 LoadWinningContent();
@@ -74,7 +73,7 @@ public class SceneController : MonoBehaviour
 
     }
 
-    void LoadBattle(int numSleepDemons, int levelNum, string levelName, string introConvo, string outroConvoWin, string outroConvoLose)
+    void LoadBattle(int levelNum, int numSleepDemons, string levelName, string introConvo, string outroConvoWin, string outroConvoLose)
     {
     	PlayerPrefsController.StoreInt(SavedData.CurrLevelNum, levelNum);
     	PlayerPrefsController.StoreString(SavedData.CurrLevelName, levelName);
@@ -106,6 +105,14 @@ public class SceneController : MonoBehaviour
     void LoadWinningContent()
     {
     	LoadScene("Game Done");
+    }
+
+    public void Reset()
+    {
+        Debug.Log("[SceneController]: Resetting...");
+        PlayerPrefsController.StoreInt(SavedData.CurrLevelNum, 0);
+        PlayerPrefsController.StoreIntList(SavedData.LevelScores, new List<int> {0,0,0,0,0});
+        LoadScene("Main Menu");
     }
 
 }

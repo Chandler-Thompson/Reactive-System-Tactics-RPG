@@ -141,7 +141,8 @@ public class GameDoneScript : MonoBehaviour
 
     public void MainMenu()
     {
-        gc.sceneController.LoadScene("Main Menu");
+        Debug.Log("[GameDoneScript] boop.");
+        gc.sceneController.Reset();
     }
 
 }

@@ -43,11 +43,11 @@ def ReadPNG(inputfile):
 		for y in range(height):
 			r,g,b = im.getpixel((x,y))
 			if (r,g,b)==playerSpawn:
-				tileheight = random.randint(1,len(heightmap))
+				tileheight = 3
 				playerSpawns.append((x,y,tileheight))
 				board.append((x,y,tileheight))
 			elif (r,g,b)==cpuSpawn:
-				tileheight = random.randint(1,len(heightmap))
+				tileheight = 3
 				cpuSpawns.append((x,y,tileheight))
 				board.append((x,y,tileheight))
 			elif (r,g,b)==(255,255,255):

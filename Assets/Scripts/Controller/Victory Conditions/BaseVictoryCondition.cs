@@ -7,7 +7,7 @@ public abstract class BaseVictoryCondition : MonoBehaviour
 	public Alliances Victor
 	{
 		get { return victor; } 
-		protected set { victor = value; }
+		/*protected*/ set { victor = value; } //TODO: removed field protection for testing purposes
 	}
 	Alliances victor = Alliances.None;
 	

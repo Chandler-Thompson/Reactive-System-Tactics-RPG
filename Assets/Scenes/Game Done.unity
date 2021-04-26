@@ -262,10 +262,10 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
+    m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 
@@ -773,8 +773,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameDoneText: {fileID: 449985061}
-  gameWonText: Wow! A great night's sleep! You weren't supposed to win...
-  gameLostText: How does it feel? Knowing every night bring a nightmare. You've lost.
+  gameWonText: Wow! You had a great night's sleep! I wish I knew how to do that...
+  gameLostText: So many nightmares! Maybe you'll sleep better tomorrow...
   orb1: {fileID: 680105430}
   orb2: {fileID: 142668673}
   orb3: {fileID: 1088721289}
