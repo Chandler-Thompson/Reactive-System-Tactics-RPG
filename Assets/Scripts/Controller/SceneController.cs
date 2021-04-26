@@ -115,4 +115,10 @@ public class SceneController : MonoBehaviour
         LoadScene("Main Menu");
     }
 
+    public void QuitGame()
+    {
+        Debug.Log("Quitting");
+        Application.Quit();
+    }
+
 }

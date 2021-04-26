@@ -38,4 +38,10 @@ public class HideUI : MonoBehaviour
             button.GetComponentInChildren<Text>().text = "Hide";
         }
     }
+
+    public void QuitGame()
+    {
+        Debug.Log("Quiting through UI");
+        Application.Quit();
+    }
 }
