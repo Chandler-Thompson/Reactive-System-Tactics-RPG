@@ -37,16 +37,6 @@ public class UnitSpawner : MonoBehaviour
 
 	        	currSpawns += 1;
 	        }
-	        else
-	        {
-	        	Debug.Log("[UnitSpawner] Location not empty! "+spawnLocation.content.name);
-	        }
-        }
-        else
-        {
-        	Debug.Log("[UnitSpawner] active: "+active);
-        	Debug.Log("[UnitSpawner] currUnitInstance: "+currUnitInstance);
-        	Debug.Log("[UnitSpawner] currSpawns: "+currSpawns);
         }
     }
 }
