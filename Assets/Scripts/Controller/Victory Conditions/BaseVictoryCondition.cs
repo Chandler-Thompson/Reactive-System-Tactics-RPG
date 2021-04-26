@@ -23,16 +23,23 @@ public abstract class BaseVictoryCondition : MonoBehaviour
 	protected virtual void OnEnable ()
 	{
 		this.AddObserver(OnHPDidChangeNotification, Stats.DidChangeNotification(StatTypes.HP));
+		this.AddObserver(OnTurnBegan, TurnOrderController.TurnBeganNotification);
 	}
 	
 	protected virtual void OnDisable ()
 	{
 		this.RemoveObserver(OnHPDidChangeNotification, Stats.DidChangeNotification(StatTypes.HP));
+		this.RemoveObserver(OnTurnBegan, TurnOrderController.TurnBeganNotification);
 	}
 	#endregion
 	
 	#region Notification Handlers
 	protected virtual void OnHPDidChangeNotification (object sender, object args)
+	{
+		CheckForGameOver();
+	}
+
+	protected virtual void OnTurnBegan (object sender, object args)
 	{
 		CheckForGameOver();
 	}

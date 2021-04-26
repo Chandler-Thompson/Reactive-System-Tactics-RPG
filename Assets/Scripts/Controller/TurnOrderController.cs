@@ -47,8 +47,6 @@ public class TurnOrderController : MonoBehaviour
 					bc.turn.Change(units[i]);
 					units[i].PostNotification(TurnBeganNotification);
 
-					Debug.Log("[TurnOrderController] Turn has begun.");
-
 					yield return units[i];
 
 					int cost = turnCost;

@@ -67,19 +67,22 @@ public static class UnitFactory
 		return instance;
 	}
 
-	public static void Situate (Unit unit, Tile tile, Directions facingDir)
+	public static void Situate (Unit unit, Tile tile, Directions facingDir, bool relocate = false)
 	{
-		GameObject instance = unit.gameObject;
-		GameObject unitContainer = GameObject.Find("Units");
-		instance.transform.SetParent(unitContainer.transform);
+		if(!relocate)
+		{
+			GameObject instance = unit.gameObject;
+			GameObject unitContainer = GameObject.Find("Units");
+			instance.transform.SetParent(unitContainer.transform);
+
+			GameObject bcObj = GameObject.Find("Battle Controller");
+			BattleController bc = bcObj.GetComponent<BattleController>();
+			bc.units.Add(unit);
+		}
 
 		unit.Place(tile);
 		unit.dir = facingDir;
 		unit.Match();
-			
-		GameObject bcObj = GameObject.Find("Battle Controller");
-		BattleController bc = bcObj.GetComponent<BattleController>();
-		bc.units.Add(unit);
 
 	}
 	#endregion

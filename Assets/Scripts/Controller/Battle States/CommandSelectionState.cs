@@ -8,6 +8,7 @@ public class CommandSelectionState : BaseAbilityMenuState
 	{
 		base.Enter ();
 		statPanelController.ShowPrimary(turn.actor.gameObject);
+
 		if (driver.Current == Drivers.Computer)
 			StartCoroutine( ComputerTurn() );
 	}
