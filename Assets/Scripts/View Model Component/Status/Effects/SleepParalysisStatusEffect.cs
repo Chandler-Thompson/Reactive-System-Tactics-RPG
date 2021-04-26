@@ -26,19 +26,21 @@ public class SleepParalysisStatusEffect : StatusEffect
 
     void OnDisable ()
 	{	
-		currNumStage = (myCondition as StackingStatusCondition).numStacks;
 
 		//Revert the debuffs placed by current stage and those below it
 		if(currNumStage >= 1)
 		{
+			Debug.Log("[SleepParalysisStatusEffect] Reverting Stage 1.");
 			RevertStage1();
 		}
 		if(currNumStage >= 2)
 		{
+			Debug.Log("[SleepParalysisStatusEffect] Reverting Stage 2.");
 			RevertStage2();
 		}
 		if(currNumStage >= 3)
 		{
+			Debug.Log("[SleepParalysisStatusEffect] Reverting Stage 3.");
 			RevertStage3();
 		}
 
