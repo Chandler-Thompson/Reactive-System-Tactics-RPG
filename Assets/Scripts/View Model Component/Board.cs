@@ -59,7 +59,6 @@ public class Board : MonoBehaviour
 		{
 			Vector3 spawn = data.cpuSpawns[i];
 			Point spawnPoint = new Point((int)spawn.x, (int)spawn.z);
-			Debug.Log("[Board] Point:"+spawnPoint);
 			cpuSpawns.Add(spawnPoint, tiles[spawnPoint]);
 		}
 	}

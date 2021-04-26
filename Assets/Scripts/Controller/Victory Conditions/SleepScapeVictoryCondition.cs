@@ -6,13 +6,12 @@ public class SleepScapeVictoryCondition : BaseVictoryCondition
 
 	public Unit hero;
 
-	Color victoryTileColor = new Color(0, 0, 1, 1);
+	Color victoryTileColor = new Color(0, 1, 1, 1);
 	Color defeatTileColor = new Color(0, 0, 1, 1);
 
 	protected override void OnEnable ()
 	{
 		base.OnEnable();
-
 	}
 
 	protected override void CheckForGameOver ()
@@ -33,7 +32,7 @@ public class SleepScapeVictoryCondition : BaseVictoryCondition
 	{
 
 		//Set max tiles to defeat
-		for(int i = 0; i < bc.board.max.y; i++)
+		for(int i = 0; i <= bc.board.max.y; i++)
 		{
 			Point point = new Point(bc.board.max.x, i);
 			Tile tile = bc.board.GetTile(point);
@@ -52,9 +51,9 @@ public class SleepScapeVictoryCondition : BaseVictoryCondition
 		}
 
 		//Set min tiles to victory
-		for(int i = 0; i < bc.board.min.y; i++)
+		for(int i = 0; i <= bc.board.max.y; i++)
 		{
-			Point point = new Point(bc.board.min.x+1, i);
+			Point point = new Point(bc.board.min.x, i);
 			Tile tile = bc.board.GetTile(point);
 
 			if(tile)
@@ -65,10 +64,6 @@ public class SleepScapeVictoryCondition : BaseVictoryCondition
 				}else{
 					tile.GetComponentInChildren<Renderer>().material.SetColor("_BaseColor", victoryTileColor);
 				}
-			}
-			else
-			{
-				Debug.Log("[SleepScapeVictoryCondition] Victory tile not found...");
 			}
 
 		}

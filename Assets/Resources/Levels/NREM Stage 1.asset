@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba2db5bac6dbc4813ba1d0a4dcd05f69, type: 3}
-  m_Name: LevelDataTemplate
+  m_Name: NREM Stage 1
   m_EditorClassIdentifier: 
   tiles:
   - {x: 0, y: 2, z: 4}
@@ -177,7 +177,7 @@ MonoBehaviour:
   - {x: 15, y: 1, z: 4}
   - {x: 15, y: 2, z: 5}
   - {x: 15, y: 2, z: 6}
-  - {x: 15, y: 1, z: 7}
+  - {x: 15, y: 4, z: 7}
   - {x: 15, y: 3, z: 8}
   - {x: 15, y: 3, z: 9}
   - {x: 15, y: 4, z: 10}
@@ -188,7 +188,7 @@ MonoBehaviour:
   - {x: 16, y: 1, z: 4}
   - {x: 16, y: 2, z: 5}
   - {x: 16, y: 2, z: 6}
-  - {x: 16, y: 3, z: 7}
+  - {x: 16, y: 5, z: 7}
   - {x: 16, y: 3, z: 8}
   - {x: 16, y: 3, z: 9}
   - {x: 16, y: 4, z: 10}
@@ -208,7 +208,7 @@ MonoBehaviour:
   - {x: 18, y: 1, z: 2}
   - {x: 18, y: 1, z: 3}
   - {x: 18, y: 2, z: 4}
-  - {x: 18, y: 2, z: 5}
+  - {x: 18, y: 1, z: 5}
   - {x: 18, y: 3, z: 6}
   - {x: 18, y: 3, z: 7}
   - {x: 18, y: 3, z: 8}
@@ -231,9 +231,9 @@ MonoBehaviour:
   - {x: 20, y: 1, z: 3}
   - {x: 20, y: 2, z: 4}
   - {x: 20, y: 2, z: 5}
-  - {x: 20, y: 6, z: 6}
+  - {x: 20, y: 1, z: 6}
   - {x: 20, y: 2, z: 7}
-  - {x: 20, y: 1, z: 8}
+  - {x: 20, y: 6, z: 8}
   - {x: 20, y: 2, z: 9}
   - {x: 20, y: 3, z: 10}
   - {x: 20, y: 5, z: 11}
@@ -298,7 +298,7 @@ MonoBehaviour:
   - {x: 26, y: 1, z: 4}
   - {x: 26, y: 2, z: 5}
   - {x: 26, y: 2, z: 6}
-  - {x: 26, y: 2, z: 7}
+  - {x: 26, y: 3, z: 7}
   - {x: 26, y: 3, z: 8}
   - {x: 26, y: 4, z: 9}
   - {x: 26, y: 4, z: 10}
@@ -332,11 +332,11 @@ MonoBehaviour:
   - {x: 29, y: 4, z: 9}
   - {x: 29, y: 5, z: 10}
   playerSpawns:
-  - {x: 15, y: 1, z: 7}
-  - {x: 16, y: 3, z: 7}
+  - {x: 15, y: 4, z: 7}
+  - {x: 16, y: 5, z: 7}
   cpuSpawns:
-  - {x: 18, y: 2, z: 5}
+  - {x: 18, y: 1, z: 5}
   - {x: 18, y: 5, z: 9}
-  - {x: 20, y: 6, z: 6}
-  - {x: 20, y: 1, z: 8}
-  - {x: 26, y: 2, z: 7}
+  - {x: 20, y: 1, z: 6}
+  - {x: 20, y: 6, z: 8}
+  - {x: 26, y: 3, z: 7}

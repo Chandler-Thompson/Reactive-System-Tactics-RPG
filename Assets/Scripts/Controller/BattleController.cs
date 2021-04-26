@@ -48,4 +48,16 @@ public class BattleController : StateMachine
 		unitLevels = PlayerPrefsController.GetIntList(SavedData.CurrLevelUnitLevels);
 
 	}
+
+	//NOTE: ONLY FOR TESTING PURPOSES!!!
+	public void LoadNextLevel(int score)
+	{
+		int currLevel = PlayerPrefsController.GetInt(SavedData.CurrLevelNum);
+		List<int> levelScores = PlayerPrefsController.GetIntList(SavedData.LevelScores);
+		levelScores[currLevel] = score;
+		PlayerPrefsController.StoreIntList(SavedData.LevelScores, levelScores);
+
+		GameObject.Find("Game Controller").GetComponent<GameController>().sceneController.LoadNextScene();
+	}
+
 }
