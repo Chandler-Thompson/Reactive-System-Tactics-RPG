@@ -50,7 +50,7 @@ public class Board : MonoBehaviour
 		for (int i = 0; i < data.playerSpawns.Count; ++i)
 		{
 			Vector3 spawn = data.playerSpawns[i];
-			Point spawnPoint = new Point((int)spawn.x, (int)spawn.y);
+			Point spawnPoint = new Point((int)spawn.x, (int)spawn.z);
 			playerSpawns.Add(spawnPoint, tiles[spawnPoint]);
 		}
 
@@ -58,7 +58,8 @@ public class Board : MonoBehaviour
 		for (int i = 0; i < data.cpuSpawns.Count; ++i)
 		{
 			Vector3 spawn = data.cpuSpawns[i];
-			Point spawnPoint = new Point((int)spawn.x, (int)spawn.y);
+			Point spawnPoint = new Point((int)spawn.x, (int)spawn.z);
+			Debug.Log("[Board] Point:"+spawnPoint);
 			cpuSpawns.Add(spawnPoint, tiles[spawnPoint]);
 		}
 	}

@@ -77,7 +77,7 @@ public class InitBattleTestState : BattleState
 				Destroy(instance); // instance not needed, as we are making a spawner instead
 				GameObject spawnerInstance = Instantiate(owner.spawner.gameObject);
 				UnitSpawner spawner = spawnerInstance.GetComponent<UnitSpawner>();
-				spawner.init(unitRecipes[i], level, spawnTile, 1);
+				spawner.init(unitRecipes[i], level, spawnTile, 2);
 			}
 			
 		}

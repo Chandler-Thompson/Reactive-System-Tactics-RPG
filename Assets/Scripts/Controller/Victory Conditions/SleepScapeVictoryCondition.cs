@@ -6,12 +6,31 @@ public class SleepScapeVictoryCondition : BaseVictoryCondition
 
 	public Unit hero;
 
-	Color victoryTileColor = new Color(1, 1, 1, 1);
-	Color defeatTileColor = new Color(0, 0, 1, 0);
+	Color victoryTileColor = new Color(0, 1, 0, 1);
+	Color defeatTileColor = new Color(0, 0, 1, 1);
 
 	protected override void OnEnable ()
 	{
 		base.OnEnable();
+
+	}
+
+	protected override void CheckForGameOver ()
+	{
+		base.CheckForGameOver();
+		if (hero.tile.pos.x == bc.board.max.x)
+		{
+			Victor = Alliances.Enemy;
+		}
+		else if (hero.tile.pos.x == bc.board.min.x)
+		{
+			Victor = Alliances.Hero;
+		}
+	}
+
+	//TODO: There has got to be a better way to keep these tiles colored...
+	void Update()
+	{
 
 		//Set max tiles to defeat
 		for(int i = 0; i < bc.board.max.y; i++)
@@ -50,18 +69,5 @@ public class SleepScapeVictoryCondition : BaseVictoryCondition
 
 		}
 
-	}
-
-	protected override void CheckForGameOver ()
-	{
-		base.CheckForGameOver();
-		if (hero.tile.pos.x == bc.board.max.x)
-		{
-			Victor = Alliances.Enemy;
-		}
-		else if (hero.tile.pos.x == bc.board.min.x)
-		{
-			Victor = Alliances.Hero;
-		}
 	}
 }
