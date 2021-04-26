@@ -128,7 +128,10 @@ public class SleepParalysisStatusEffect : StatusEffect
 		if(transitionDirection < 0)
 		{ // Revert stages
 			switch(currNumStage)
-			{ // No need for case 0, RevertStage1 called in OnDisable
+			{
+				case 0:
+					RevertStage1();
+					break;
 				case 1:
 					RevertStage2();
 					break;

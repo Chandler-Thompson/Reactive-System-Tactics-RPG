@@ -53,18 +53,33 @@ public class InitBattleTestState : BattleState
 		
 		for (int i = 0; i < unitRecipes.Count; ++i)
 		{
+
 			int level = unitLevels[i];
+
 			GameObject instance = UnitFactory.Create(unitRecipes[i], level);
-			instance.transform.SetParent(unitContainer.transform);
+			Alliances allianceType = instance.GetComponent<Alliance>().type;
+			Tile spawnTile = SpawnUnit(allianceType);
 			
-			Tile spawnTile = SpawnUnit(instance.GetComponent<Alliance>().type);
+			if(allianceType == Alliances.Hero)
+			{
+				instance.transform.SetParent(unitContainer.transform);
+
+				Unit unit = instance.GetComponent<Unit>();
+				unit.Place( spawnTile );
+				unit.dir = (Directions)UnityEngine.Random.Range(0, 4);
+				unit.Match();
+				
+				units.Add(unit);
+			}
+			else
+			{
+				//TODO: Dont need to be making instance just to check alliance then destroying it...
+				Destroy(instance); // instance not needed, as we are making a spawner instead
+				GameObject spawnerInstance = Instantiate(owner.spawner.gameObject);
+				UnitSpawner spawner = spawnerInstance.GetComponent<UnitSpawner>();
+				spawner.init(unitRecipes[i], level, spawnTile, 1);
+			}
 			
-			Unit unit = instance.GetComponent<Unit>();
-			unit.Place( spawnTile );
-			unit.dir = (Directions)UnityEngine.Random.Range(0, 4);
-			unit.Match();
-			
-			units.Add(unit);
 		}
 		
 		SelectTile(units[0].tile.pos);

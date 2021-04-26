@@ -50,19 +50,19 @@ public class SceneController : MonoBehaviour
         switch(currLevel)
         {
             case 0: // Battle 1 NREM Stage 1
-                LoadBattle(3, 1, "NREM Stage 1", "", "", "");
+                LoadBattle(5, 1, "NREM Stage 1", "", "", "");
                 break;
             case 1: // Battle 2
-                LoadBattle(10, 2, "NREM Stage 2", "", "", "");
+                LoadBattle(4, 2, "NREM Stage 2", "", "", "");
                 break;
             case 2: // Battle 3
-                LoadBattle(10, 3, "NREM Stage 3", "", "", "");
+                LoadBattle(5, 3, "NREM Stage 3", "", "", "");
                 break;
             case 3: // Battle 4
-                LoadBattle(10, 4, "REM Sleep", "", "", "");
+                LoadBattle(6, 4, "REM Sleep", "", "", "");
                 break;
             case 4: // Battle 5
-                LoadBattle(10, 5, "Dreamscape", "", "", "");
+                LoadBattle(4, 5, "Dreamscape", "", "", "");
                 break;
             case 5:
                 LoadWinningContent();

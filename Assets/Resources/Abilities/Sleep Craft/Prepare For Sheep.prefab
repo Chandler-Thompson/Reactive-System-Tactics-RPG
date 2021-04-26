@@ -71,7 +71,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statusName: SheepPerviousStatusEffect
   isStackable: 1
-  initialStacks: 2
+  initialStacks: 5
   hasMaxStacks: 0
   maxStacks: 0
   isLimitedDuration: 0
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e98292743344d401d9daffa7126b07bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 7
+  level: 10
 --- !u!114 &7937417290673340155
 MonoBehaviour:
   m_ObjectHideFlags: 0

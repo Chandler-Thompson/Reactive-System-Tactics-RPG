@@ -120,18 +120,28 @@ public class HealthBar : MonoBehaviour
 
         if(counterTextField && newEffectCondition)
         {
+
+            //TODO: Clean this up to be more robust to strings vs ints.
+
             counterTextField.text = newEffectCondition.text;
 
-            //Messing with stuff
-            Int32.TryParse(newEffectCondition.text, out int i);
-            if (i <= 0)
+            if(newEffectCondition.text.Equals(""))
             {
                 counterTextField.transform.parent.gameObject.SetActive(false);
             }
-            else if (i > 0)
+            else
             {
-                counterTextField.transform.parent.gameObject.SetActive(true);
+                Int32.TryParse(newEffectCondition.text, out int i);
+                if (i <= 0)
+                {
+                    counterTextField.transform.parent.gameObject.SetActive(false);
+                }
+                else if (i > 0)
+                {
+                    counterTextField.transform.parent.gameObject.SetActive(true);
+                }
             }
+            
         }
 
     }

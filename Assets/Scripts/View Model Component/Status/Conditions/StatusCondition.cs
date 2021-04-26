@@ -30,6 +30,9 @@ public class StatusCondition : MonoBehaviour
 
 	public virtual void Remove ()
 	{
+
+		UpdateText("");
+
 		if (parentStatus)
 			parentStatus.Remove(this);
 	}

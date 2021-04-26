@@ -7,7 +7,7 @@ public class SleepScapeVictoryCondition : BaseVictoryCondition
 	public Unit hero;
 
 	Color victoryTileColor = new Color(1, 1, 1, 1);
-	Color defeatTileColor = new Color(0, 0, 0, 0);
+	Color defeatTileColor = new Color(0, 0, 1, 0);
 
 	protected override void OnEnable ()
 	{
@@ -19,12 +19,16 @@ public class SleepScapeVictoryCondition : BaseVictoryCondition
 			Point point = new Point(bc.board.max.x, i);
 			Tile tile = bc.board.GetTile(point);
 
-			Transform quad = tile.transform.Find("Quad");
-			if(quad){
-				quad.GetComponent<Renderer>().material.SetColor("_BaseColor", defeatTileColor);
-			}else{
-				tile.GetComponentInChildren<Renderer>().material.SetColor("_BaseColor", defeatTileColor);
+			if(tile)
+			{
+				Transform quad = tile.transform.Find("Quad");
+				if(quad){
+					quad.GetComponent<Renderer>().material.SetColor("_BaseColor", defeatTileColor);
+				}else{
+					tile.GetComponentInChildren<Renderer>().material.SetColor("_BaseColor", defeatTileColor);
+				}
 			}
+			
 
 		}
 
@@ -34,11 +38,14 @@ public class SleepScapeVictoryCondition : BaseVictoryCondition
 			Point point = new Point(bc.board.min.x, i);
 			Tile tile = bc.board.GetTile(point);
 
-			Transform quad = tile.transform.Find("Quad");
-			if(quad){
-				quad.GetComponent<Renderer>().material.SetColor("_BaseColor", victoryTileColor);
-			}else{
-				tile.GetComponentInChildren<Renderer>().material.SetColor("_BaseColor", victoryTileColor);
+			if(tile)
+			{
+				Transform quad = tile.transform.Find("Quad");
+				if(quad){
+					quad.GetComponent<Renderer>().material.SetColor("_BaseColor", victoryTileColor);
+				}else{
+					tile.GetComponentInChildren<Renderer>().material.SetColor("_BaseColor", victoryTileColor);
+				}
 			}
 
 		}

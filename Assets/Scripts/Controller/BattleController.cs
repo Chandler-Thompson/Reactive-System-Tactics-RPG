@@ -25,6 +25,8 @@ public class BattleController : StateMachine
 	public IEnumerator round;
 	public ComputerPlayer cpu;
 
+	public UnitSpawner spawner;
+
 	void Start ()
 	{
 

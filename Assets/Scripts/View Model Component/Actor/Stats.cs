@@ -29,6 +29,8 @@ public class Stats : MonoBehaviour
 		get { return _data[(int)s]; }
 		set { SetValue(s, value, true); }
 	}
+	
+	[SerializeField] 
 	int[] _data = new int[ (int)StatTypes.Count ];
 	#endregion
 	

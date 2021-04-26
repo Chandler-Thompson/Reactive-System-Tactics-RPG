@@ -18,8 +18,6 @@ public class PerformAbilityState : BattleState
 		turn.actor.callAttackAnim();
 		yield return new WaitForSeconds(1.8f);
 		ApplyAbility();
-		
-		Debug.Log("[PerformAbilityState] Checking for battle over...");
 
 		if (IsBattleOver())
 		{
@@ -37,12 +35,10 @@ public class PerformAbilityState : BattleState
 			owner.ChangeState<SelectUnitState>();
 		else if (turn.hasUnitMoved)
 		{
-			Debug.Log("[PerformAbilityState] End Facing...");
 			owner.ChangeState<EndFacingState>();
 		}
 		else
 		{
-			Debug.Log("[PerformAbilityState] Select again...");
 			owner.ChangeState<CommandSelectionState>();
 		}
 	}

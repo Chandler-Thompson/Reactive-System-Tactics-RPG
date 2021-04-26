@@ -24,7 +24,6 @@ public class SheepPerviousStatusEffect : StatusEffect
 	{
 		
 		this.RemoveObserver(OnHPWillChange, Stats.WillChangeNotification(StatTypes.HP), stats);
-
 		//Remove status effect visual
 	}
 
