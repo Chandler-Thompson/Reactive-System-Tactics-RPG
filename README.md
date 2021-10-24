@@ -1,4 +1,4 @@
-# Reactive-System-Tactics-RPG AKA Sleep Deprived
+# Sleep Deprived
 > This is the culmination of the work done by **Richard Chandler Thompson** and **Kaelan Hill** for Ludum Dare 48: Deeper and Deeper!
 
 <br>
