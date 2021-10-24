@@ -53,11 +53,7 @@
   <img src="https://github.com/Chandler-Thompson/Reactive-System-Tactics-RPG/blob/LudumDareVersion/Assets/Ticking%20Clock.gif" />
 </p>
 
-> Sadly the shepherd isn't much of a lucid dreamer, there is only so much he can do in his own dreams.. He is fighting for his proverbial life against the sleep demons after all! He's busy doing what he can to debuff the demons, and then the sheep come along and take care of the rest.
-
-<p align="center">
-  <img src="https://github.com/Chandler-Thompson/Reactive-System-Tactics-RPG/blob/LudumDareVersion/Assets/DemonConversion.gif" />
-</p>
+> Sadly the shepherd isn't much of a lucid dreamer, there is only so much he can do in his own dreams.. He is fighting for his dreamy life against the sleep demons after all! He's busy doing what he can to debuff the demons, and then the sheep come along and take care of the rest.
 
 > The debuffs, that the shepherd casts, stack on the demons and it is the job of the sheep to pop the stacks. Pop enough stacks, and you get rid of a sleep demon, they even have a cuddly surprise inside! 
 
