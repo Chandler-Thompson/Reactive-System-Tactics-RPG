@@ -72,6 +72,10 @@
 
 ## Synopsis
 
+> In the end we learned a great deal about what will and won't work with our idea, as well as how much an unintendedly adorable character can really grab peoples' hearts. Almost every single positive comment about our game mentioned the sheep! We were also immensely proud of the amount of work that we were able to get done in the short duration of the game jam, all without depriving ourselves of too much sleep too!
+
+> We look forward to making another, more fleshed out game using these concepts in the future, but in the meantime, sleep well and have a good night.
+
 | Join the Shepherd! | Save the Sheep! |
 | --- | --- |
 | Become something the shepherd dreams about, by going to this link! <br> https://ldjam.com/events/ludum-dare/48/sleep-deprived <br> Or, download the (less buggy) windows version! <br> https://idaedalusi.itch.io/sleep-deprived| ![Bouncing Sheep](https://github.com/Chandler-Thompson/Reactive-System-Tactics-RPG/blob/LudumDareVersion/Assets/Bouncing%20Sheep.gif) |
